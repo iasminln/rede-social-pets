@@ -1,0 +1,9 @@
+@function font($size) {
+    @return $size / 16+rem;
+}
+
+@mixin mq($width, $type: max) {
+    @media (#{$type}-width: ($width + px)) {
+        @content;
+    }
+}
