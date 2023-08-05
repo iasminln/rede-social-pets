@@ -5,4 +5,14 @@ import svgr from 'vite-plugin-svgr';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), svgr()],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+          @import "./src/css//scss/_mixins.scss";
+          @import "./src/css/scss/_vars.scss";
+        `,
+      },
+    },
+  },
 });

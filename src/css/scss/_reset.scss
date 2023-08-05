@@ -9,6 +9,8 @@ body {
   padding: 0;
   color: $color-first;
   font-family: $type-first;
+  position: relative;
+  top: size(64);
 }
 
 h1,
@@ -16,6 +18,10 @@ h2,
 h3,
 h4 {
   margin: 0;
+} 
+
+a {
+  text-decoration: none;
 }
 
 ul,
@@ -33,13 +39,8 @@ img {
 button,
 input {
   display: block;
-  font-size: font(16);
+  font-size: size(16);
   font-family: $type-first;
   color: $color-first;
 }
 
-.container {
-  max-width: 50rem;
-  padding: 0 1rem;
-  margin: 0 auto;
-}

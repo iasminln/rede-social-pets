@@ -1,5 +1,5 @@
 import React from 'react';
-import './css/style.css';
+import './css/scss/style.scss';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Login from './components/Login/Login';
@@ -10,7 +10,7 @@ import Footer from './components/Footer';
 const App = () => {
 
   return (
-    <div>
+    <>
       <BrowserRouter>
         <Header />
         <Routes>
@@ -19,7 +19,7 @@ const App = () => {
         </Routes>
         <Footer />
       </BrowserRouter>
-    </div>
+    </>
   );
 };
 

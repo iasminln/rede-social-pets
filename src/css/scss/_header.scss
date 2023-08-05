@@ -1,3 +1,46 @@
-.header {
-  background-color: red;
+header {
+  background: #ffffff;
+  height: size(64);
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba($color: #000000, $alpha: .1);
+
+  .nav{
+    @include container();
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: size(64);
+
+    .home{
+      font-family: $type-second;
+      font-size: size(24);
+      font-weight: 700;
+      letter-spacing: .1px;
+      color: $color-first;
+    }
+
+    .login{
+      display: flex;
+      align-items: center;
+      color: $color-first;
+      line-height: 1;
+
+      &::after{
+        content: '';
+        background: url('../../assets/usuario.svg') no-repeat;
+        width: 14px;
+        height: 17px;
+        display: inline-block;
+        margin-left: 8px;
+      }
+    }
+    
+  }
+
+  @include mq(650){
+    background-color: red;
+  }
 }

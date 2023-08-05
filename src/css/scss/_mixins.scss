@@ -1,9 +1,15 @@
-@function font($size) {
-    @return $size / 16+rem;
+@function size($size) {
+  @return $size/ 16+rem;
 }
 
 @mixin mq($width, $type: max) {
-    @media (#{$type}-width: ($width + px)) {
-        @content;
-    }
+  @media (#{$type}-width: ($width + px)) {
+    @content;
+  }
+}
+
+@mixin container() {
+  max-width: 50rem;
+  padding: 0 1rem;
+  margin: 0 auto;
 }
