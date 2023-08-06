@@ -1,5 +1,5 @@
 import React from 'react';
-import './css/scss/style.scss';
+import './css/style.scss';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Login from './components/Login/Login';
@@ -15,7 +15,7 @@ const App = () => {
         <Header />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/login' element={<Login />} />
+          <Route path='/login/*' element={<Login />} />
         </Routes>
         <Footer />
       </BrowserRouter>
