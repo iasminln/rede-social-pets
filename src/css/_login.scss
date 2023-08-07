@@ -21,7 +21,7 @@
     border: none;
   
     &:hover{
-      background: rgb(148, 148, 3);
+      background: rgb(221, 221, 19);
     }
   
     &:disabled{
@@ -35,11 +35,11 @@
   }
   
   .wrapper-input{
-    margin: size(6) 0;
+    margin: size(10) 0;
   
     .form-label{
       font-size: size(14);
-      margin-bottom: size(3);
+      margin-bottom: size(5);
     }
   
     .form-input{
@@ -48,6 +48,12 @@
       border: 1px solid #eee;
       border-radius: 10px;
       width: 100%;
+    }
+
+    .mensage-error{
+      font-size: size(12);
+      color: red;
+      margin-top: size(5);
     }
   }
 }

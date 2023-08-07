@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../css/style.scss'
 
-const InputDefault = ({ label, name, type }) => {
+const InputDefault = ({ label, name, type, valueRef, error}) => {
 
 
   return (
@@ -12,7 +12,9 @@ const InputDefault = ({ label, name, type }) => {
         type={type}
         id={name}
         name={name}
+        ref={valueRef}
       />
+      {error && <p className='mensage-error'>{error}</p>}
     </div>
   )
 }
