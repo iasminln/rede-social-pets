@@ -7,13 +7,13 @@ import LoginRecuperarSenha from './LoginRecuperarSenha';
 
 const Login = () => {
   return (
-    <>
+    <div className='wrapper-login-pages'>
       <Routes>
         <Route path="/" element={<LoginForm />} />
         <Route path="/criar" element={<LoginCreate />} />
         <Route path="/recuperar" element={<LoginRecuperarSenha />} />
       </Routes>
-    </>
+    </div>
   )
 }
 
