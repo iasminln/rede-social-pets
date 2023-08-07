@@ -1,27 +1,47 @@
-import React, { useRef } from 'react'
+import React, { useEffect } from 'react'
 import '../../css/style.scss'
 import { Link } from 'react-router-dom';
 import InputDefault from './InputDefault';
 import ButtonDefault from './ButtonDefault';
 import useForm from '../../hooks/useForm';
+import { TOKEN_POST, USER_GET } from '../../api';
 
 const LoginForm = () => {
   const passwordElement = useForm()
-  const usuarioElement = useForm('email')
+  const usuarioElement = useForm()
 
-  const handleSubmit = (e) => {
+  useEffect(()=>{
+    const token = window.localStorage.getItem('token')
+    if(token){
+      getUser(token)
+    }
+  }, [])
+
+  const getUser = async (token) =>{
+    const {url, options} = USER_GET(token);
+    const response = await fetch(url, options);
+    const json = await response.json();
+    console.log(json)
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
 
     usuarioElement.validate()
-    console.log("enviou", usuarioElement?.valueRef?.current?.value)
+    passwordElement.validate()
 
-    // fetch('https://dogsapi.origamid.dev/json/jwt-auth/v1/token', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify({`${usuarioElement.current?.value}, ${passwordElement.current?.value} }`)
-    // })
+    if (usuarioElement.validate() && passwordElement.validate()) {
+      const {url, options} = TOKEN_POST({
+        username: usuarioElement?.valueRef?.current?.value,
+        password: passwordElement?.valueRef?.current?.value,
+      })
+
+      const response = await fetch(url, options)
+      const json = await response.json()
+      window.localStorage.setItem('token', json.token)
+      getUser(json.token)
+    }
+
   }
 
 
