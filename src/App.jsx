@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Login from './components/Login/Login';
 import Home from './components/Home';
 import Footer from './components/Footer';
+import { UserStorage } from './userContext';
 
 
 const App = () => {
@@ -12,12 +13,14 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/login/*' element={<Login />} />
-        </Routes>
-        <Footer />
+        <UserStorage>
+          <Header />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/login/*' element={<Login />} />
+          </Routes>
+          <Footer />
+        </UserStorage>
       </BrowserRouter>
     </>
   );
