@@ -1,5 +1,4 @@
 import React, {useContext} from 'react'
-import '../../css/style.scss'
 import { Route, Routes } from 'react-router-dom';
 import LoginForm from './LoginForm';
 import LoginCreate from './LoginCreate';

@@ -1,0 +1,27 @@
+.wrapper-input {
+  margin: size(12) 0;
+
+  .form-label {
+    font-size: size(14);
+    margin-bottom: size(6);
+  }
+
+  .form-input {
+    padding: size(8) size(10);
+    background: $color-seven;
+    border: 1px solid $color-six;
+    border-radius: 6px;
+    width: 100%;
+
+    &:focus{
+      outline: none;
+      box-shadow: 0 0 3px 1px $color-four;
+    }
+  }
+
+  .mensage-error {
+    font-size: size(12);
+    color: red;
+    margin-top: size(5);
+  }
+}

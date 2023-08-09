@@ -1,0 +1,32 @@
+.button-default {
+  margin: size(10) 0;
+  padding: size(8) size(20);
+  min-width: size(100);
+  border-radius: 6px;
+  border: none;
+  background: $color-three;
+  font-weight: 500;
+  color: $color-five;
+  font-size: size(17);
+  letter-spacing: .5px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  
+  &:hover, &:focus {
+    outline: none;
+    box-shadow: 0 0 3px 1px $color-four;
+  }
+
+  &:disabled {
+    opacity: .5;
+    cursor: initial;
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
+}

@@ -1,5 +1,4 @@
 import React from 'react'
-import '../../css/style.scss'
 
 const InputDefault = ({ label, name, type, valueRef, error}) => {
 

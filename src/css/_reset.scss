@@ -7,7 +7,7 @@
 body {
   margin: 0;
   padding: 0;
-  color: $color-first;
+  color: $color-type;
   font-family: $type-first;
   position: relative;
   top: size(84);
@@ -41,6 +41,6 @@ input {
   display: block;
   font-size: size(16);
   font-family: $type-first;
-  color: $color-first;
+  color: $color-type;
 }
 

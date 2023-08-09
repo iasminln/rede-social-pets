@@ -2,6 +2,8 @@
 @import "vars";
 @import "reset";
 @import "header";
-@import "login";
+@import "../components/Login/login";
 @import "home";
 @import "footer";
+@import "../components/Login/form/button";
+@import "../components/Login/form/input"

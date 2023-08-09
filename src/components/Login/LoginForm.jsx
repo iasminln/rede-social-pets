@@ -1,10 +1,10 @@
-import React, { useContext, useEffect } from 'react'
-import '../../css/style.scss'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
-import InputDefault from './InputDefault';
-import ButtonDefault from './ButtonDefault';
+import InputDefault from './form/InputDefault';
+import ButtonDefault from './form/ButtonDefault';
 import useForm from '../../hooks/useForm';
 import { UserContext } from '../../userContext';
+import IconSpinner from './Icons/IconSpiner';
 
 const LoginForm = () => {
   const passwordElement = useForm()
@@ -24,18 +24,26 @@ const LoginForm = () => {
   }
 
   return (
-    <section className='login'>
-      <p className='titulos'>Login</p>
-      <form action="" onSubmit={handleSubmit}>
-        <InputDefault type='text' label='Usuário' name='usuarioElement' {...usuarioElement} />
-        <InputDefault type='password' label='Senha' name='passwordElement' {...passwordElement} />
+    <>
+      <section className='login'>
+        <h1 className='titulos'>Login</h1>
+        <form onSubmit={handleSubmit}>
+          <InputDefault type='text' label='Usuário' name='usuarioElement' {...usuarioElement} />
+          <InputDefault type='password' label='Senha' name='passwordElement' {...passwordElement} />
 
-        {loading ? <ButtonDefault disabled>...</ButtonDefault> : <ButtonDefault>Entrar</ButtonDefault>}
+          {loading ? <ButtonDefault disabled><IconSpinner /></ButtonDefault> : <ButtonDefault>Entrar</ButtonDefault>}
 
-        {error && <p className='mensage-error-login'>{error}</p>}
-        <Link className='x-small-text' to='/login/recuperar'>Esqueci minha senha</Link>
-      </form>
-    </section>
+          {error && <p className='mensage-error-login'>{error}</p>}
+          <Link className='x-small-text' to='/login/recuperar'>Esqueci minha senha</Link>
+        </form>
+
+      </section>
+      <section className='login'>
+        <h2 className='titulos'>Cadastro</h2>
+        <p>Ainda não possui conta? Cadastre-se no site!</p>
+        <Link to='/login/criar-conta'  className='button-default'>Cadastre-se</Link>
+      </section >
+    </>
   )
 }
 

@@ -1,0 +1,40 @@
+.wrapper-login-pages {
+  .login {
+    @include container();
+    margin-bottom: size(40);
+  }
+
+  .titulos {
+    font-size: size(36);
+    font-weight: 500;
+    margin: 0 0 10px 0;
+    font-family: $type-second;
+    position: relative;
+    z-index: 1;
+    left: size(6);
+    color: $color-two;
+
+    &::before{
+      content: '';
+      background: $color-one;
+      width: size(20);
+      height: size(20);
+      border-radius: 2px;
+      display: block;
+      position: absolute;
+      bottom: size(10);
+      z-index: -1;
+      left: size(-6);
+    }
+  }
+
+  .x-small-text {
+    font-size: size(12);
+  }
+
+  .mensage-error-login {
+    font-size: size(14);
+    color: $color-eight;
+    margin: size(6) 0;
+  }
+}
