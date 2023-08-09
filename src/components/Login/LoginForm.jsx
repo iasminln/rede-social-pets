@@ -34,7 +34,7 @@ const LoginForm = () => {
           {loading ? <ButtonDefault disabled><IconSpinner /></ButtonDefault> : <ButtonDefault>Entrar</ButtonDefault>}
 
           {error && <p className='mensage-error-login'>{error}</p>}
-          <Link className='x-small-text' to='/login/recuperar'>Esqueci minha senha</Link>
+          <Link className='link-esqueci-senha' to='/login/recuperar'>Esqueci minha senha</Link>
         </form>
 
       </section>

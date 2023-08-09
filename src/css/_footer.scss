@@ -1,7 +1,55 @@
 footer {
-  .teste{
-    height: size(64);
-    background: rgb(197, 197, 197);
-    margin-top: 30px;
+  height: size(160);
+  background: $color-three;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .text01 {
+    color: $color-five;
+    font-family: $type-second;
+    font-size: size(20);
+    font-weight: 600;
+    margin-bottom: size(8);
+    text-align: center;
+  }
+
+  .text02 {
+    color: $color-five;
+    font-size: size(14);
+    margin-bottom: size(15);
+    text-align: center;
+
+    span {
+      color: $color-five;
+      position: relative;
+
+      &::after {
+        content: '';
+        width: 100%;
+        height: 1px;
+        background: $color-five;
+        display: block;
+        position: absolute;
+        right: 0;
+      }
+    }
+  }
+
+  .image-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+      padding: 0 size(10);
+      transition: .2s;
+
+      &:hover{
+        transform: scale(1.2);
+      }
+    }
+
   }
 }

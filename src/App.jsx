@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Login from './components/Login/Login';
 import Home from './components/Home';
-import Footer from './components/Footer';
+import Footer from './components/footer/Footer';
 import { UserStorage } from './userContext';
 
 

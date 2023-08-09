@@ -1,10 +1,11 @@
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 import { Route, Routes } from 'react-router-dom';
 import LoginForm from './LoginForm';
 import LoginCreate from './LoginCreate';
 import LoginRecuperarSenha from './LoginRecuperarSenha';
 import { Navigate } from 'react-router-dom';
 import { UserContext } from '../../userContext';
+import ImageLogin from './ImageMain/ImageLogin';
 
 const Login = () => {
   const { login } = useContext(UserContext)
@@ -12,11 +13,16 @@ const Login = () => {
 
   return (
     <div className='wrapper-login-pages'>
-      <Routes>
-        <Route path="/" element={<LoginForm />} />
-        <Route path="/criar" element={<LoginCreate />} />
-        <Route path="/recuperar" element={<LoginRecuperarSenha />} />
-      </Routes>
+      <div className='login-image'>
+        <ImageLogin />
+      </div>
+      <div className='login-forms'>
+        <Routes>
+          <Route path="/" element={<LoginForm />} />
+          <Route path="/criar" element={<LoginCreate />} />
+          <Route path="/recuperar" element={<LoginRecuperarSenha />} />
+        </Routes>
+      </div>
     </div>
   )
 }

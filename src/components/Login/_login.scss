@@ -1,11 +1,49 @@
 .wrapper-login-pages {
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  gap: size(30);
+
+  @include mq(800){
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .login-forms{
+    margin-top: size(80);
+    max-width: calc((1200px - 30px)/2);
+    padding: 0 size(16);
+
+    @include mq(800){
+      max-width: none;
+      margin-top: size(40);
+    }
+  }
+
+  .login-image{
+    position: relative;
+
+    &::after{
+      @include mq(800){
+        content: '';
+        background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+        width: 100%;
+        height: 100px;
+        position: absolute;
+        bottom: 0;
+      }
+
+      @include mq(500){
+        height: 50px;
+      }
+    }
+  }
+
   .login {
-    @include container();
-    margin-bottom: size(40);
+    margin-bottom: size(40); 
   }
 
   .titulos {
-    font-size: size(36);
+    font-size: size(38);
     font-weight: 500;
     margin: 0 0 10px 0;
     font-family: $type-second;
@@ -28,8 +66,21 @@
     }
   }
 
-  .x-small-text {
-    font-size: size(12);
+  .link-esqueci-senha {
+    font-size: size(14);
+    position: relative;
+    margin: size(20) 0;
+    display: inline-block;
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 1px;
+      background: $color-five;
+      display: block;
+      position: absolute;
+      right: 0;
+    }
   }
 
   .mensage-error-login {
