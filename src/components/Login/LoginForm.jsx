@@ -28,8 +28,8 @@ const LoginForm = () => {
       <section className='login'>
         <h1 className='titulos'>Login</h1>
         <form onSubmit={handleSubmit}>
-          <InputDefault type='text' label='Usuário' name='usuarioElement' {...usuarioElement} />
-          <InputDefault type='password' label='Senha' name='passwordElement' {...passwordElement} />
+          <InputDefault type='text' label='Usuário' name='usuarioElement' autocomplete="username" {...usuarioElement} />
+          <InputDefault type='password' label='Senha' name='passwordElement' autocomplete="current-password" {...passwordElement} />
 
           {loading ? <ButtonDefault disabled><IconSpinner /></ButtonDefault> : <ButtonDefault>Entrar</ButtonDefault>}
 
@@ -41,7 +41,7 @@ const LoginForm = () => {
       <section className='login'>
         <h2 className='titulos'>Cadastro</h2>
         <p>Ainda não possui conta? Cadastre-se no site!</p>
-        <Link to='/login/criar-conta'  className='button-default'>Cadastre-se</Link>
+        <Link to='/login/criar-conta' className='button-default'>Cadastre-se</Link>
       </section >
     </>
   )

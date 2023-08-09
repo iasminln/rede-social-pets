@@ -1,6 +1,6 @@
 import React from 'react'
 
-const InputDefault = ({ label, name, type, valueRef, error}) => {
+const InputDefault = ({ label, name, type, valueRef, error, autocomplete}) => {
 
 
   return (
@@ -12,6 +12,7 @@ const InputDefault = ({ label, name, type, valueRef, error}) => {
         id={name}
         name={name}
         ref={valueRef}
+        autoComplete={autocomplete}
       />
       {error && <p className='mensage-error'>{error}</p>}
     </div>

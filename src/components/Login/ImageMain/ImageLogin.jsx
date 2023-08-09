@@ -3,7 +3,8 @@ import { listImages } from './ListImages'
 
 const ImageLogin = () => {
 
-  let index = 0
+  let index = Math.floor(Math.random() * 5)
+  let initialIndex = index
   let imagemLogin
 
   const buscandoImagem = setInterval(() => {
@@ -16,13 +17,16 @@ const ImageLogin = () => {
 
   }, 500)
 
+
   const mudarImagem = () => {
     setInterval(() => {
+      index === listImages.length - 1 ? index = 0 : index++
+
+      imagemLogin.alt = listImages[index].alt;
+
       if (window.innerWidth < 800) imagemLogin.src = listImages[index].srcMobile;
       else imagemLogin.src = listImages[index].src;
 
-      imagemLogin.alt = listImages[index].alt;
-      index === listImages.length - 1 ? index = 0 : index++
     }, 6000)
   }
 
@@ -30,8 +34,8 @@ const ImageLogin = () => {
   return (
     <>
       <img
-        src={window.innerWidth < 800 ? listImages[listImages.length - 1].srcMobile : listImages[listImages.length - 1].src}
-        alt={listImages[listImages.length - 1].alt}
+        src={window.innerWidth < 800 ? listImages[initialIndex].srcMobile : listImages[initialIndex].src}
+        alt={listImages[initialIndex].alt}
         id="imagen-login"
       />
     </>
