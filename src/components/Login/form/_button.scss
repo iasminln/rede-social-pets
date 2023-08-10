@@ -1,5 +1,5 @@
 .button-default {
-  margin: size(16) 0;
+  margin: size(20) 0;
   padding: size(8) size(20);
   min-width: size(100);
   border-radius: 6px;
@@ -16,7 +16,7 @@
   justify-content: center;
   width: fit-content;
   
-  &:hover, &:focus {
+  &:hover {
     outline: none;
     box-shadow: 0 0 3px 1px $color-four;
   }

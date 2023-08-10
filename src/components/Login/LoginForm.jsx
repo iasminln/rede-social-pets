@@ -4,7 +4,7 @@ import InputDefault from './form/InputDefault';
 import ButtonDefault from './form/ButtonDefault';
 import useForm from '../../hooks/useForm';
 import { UserContext } from '../../userContext';
-import IconSpinner from './Icons/IconSpiner';
+import { IconSpinner } from './form/Icons';
 
 const LoginForm = () => {
   const passwordElement = useForm()

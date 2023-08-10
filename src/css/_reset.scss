@@ -42,5 +42,10 @@ input {
   font-size: size(16);
   font-family: $type-first;
   color: $color-type;
+
+  &:focus{
+    outline: none;
+    box-shadow: 0 0 3px 1px $color-four;
+  }
 }
 

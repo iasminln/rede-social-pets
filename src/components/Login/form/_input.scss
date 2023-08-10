@@ -1,5 +1,6 @@
 .wrapper-input {
   margin: size(12) 0;
+  position: relative;
 
   .form-label {
     font-size: size(14);
@@ -12,16 +13,22 @@
     border: 1px solid $color-six;
     border-radius: 6px;
     width: 100%;
-
-    &:focus{
-      outline: none;
-      box-shadow: 0 0 3px 1px $color-four;
-    }
   }
 
   .mensage-error {
     font-size: size(12);
     color: red;
     margin-top: size(5);
+  }
+
+  .button-show-password{
+    cursor: pointer;
+    border: none;
+    background: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 2px 10px;
+    border-radius: 6px;
   }
 }

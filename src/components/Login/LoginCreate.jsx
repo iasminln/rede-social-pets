@@ -1,13 +1,13 @@
 import React, { useContext } from 'react'
 import InputDefault from './form/InputDefault';
 import ButtonDefault from './form/ButtonDefault';
-import IconSpinner from './Icons/IconSpiner';
+import { IconSpinner } from './form/Icons';
 import useForm from '../../hooks/useForm';
 import { UserContext } from '../../userContext';
 import { USER_POST } from '../../Api';
 
 const LoginCreate = () => {
-  const { userLogin, error, loading } = useContext(UserContext)
+  const {  error, loading } = useContext(UserContext)
   const passwordElement = useForm()
   const usuarioElement = useForm()
   const emailElement = useForm('email')
