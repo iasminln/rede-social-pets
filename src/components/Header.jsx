@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <header>
       <nav className='nav'>
-        <Link className='home' to="/">DoCaSocial</Link>
+        <Link className='home' to="/">PetBook</Link>
         {data ?
           <div className='container-header-login'>
             <Link className='login' to="/login">Olá, {data.nome}</Link>

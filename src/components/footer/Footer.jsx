@@ -4,7 +4,7 @@ import { IconEmail, IconGithub, IconLinkedin } from './Icons';
 const Footer = () => {
   return (
     <footer>
-      <p className='text01'>DoCaSocial - Alguns direitos reservados!</p>
+      <p className='text01'>PetBook - Alguns direitos reservados!</p>
       <p className='text02'>Criado por: <span>Iasmin Lisboa Nogueira</span></p>
 
       <div className='image-links'>
