@@ -1,58 +1,58 @@
 .wrapper-login-pages {
   display: grid;
-  grid-template-columns: 1fr 1fr ;
+  grid-template-columns: 1fr 1fr;
   gap: size(30);
 
-  @include mq(800){
+  @include mq(800) {
     grid-template-columns: 1fr;
     gap: 0;
   }
 
-  .login-forms{
+  .login-forms {
     margin-top: size(80);
     max-width: calc((1200px - 30px)/2);
     padding: 0 size(16);
 
-    @include mq(800){
+    @include mq(800) {
       max-width: none;
       margin-top: size(40);
     }
   }
 
-  .login-image{
+  .login-image {
     position: relative;
 
-    &::after{
-      @include mq(800){
+    &::after {
+      @include mq(800) {
         content: '';
-        background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+        background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
         width: 100%;
         height: 100px;
         position: absolute;
         bottom: 0;
       }
 
-      @include mq(500){
+      @include mq(500) {
         height: 50px;
       }
     }
   }
 
   .login {
-    margin-bottom: size(40); 
+    margin-bottom: size(40);
   }
 
   .titulos {
     font-size: size(38);
     font-weight: 500;
-    margin: 0 0 10px 0;
+    margin: 0 0 size(10) 0;
     font-family: $type-second;
     position: relative;
     z-index: 1;
     left: size(6);
     color: $color-two;
 
-    &::before{
+    &::before {
       content: '';
       background: $color-one;
       width: size(20);
@@ -87,5 +87,85 @@
     font-size: size(14);
     color: $color-eight;
     margin: size(6) 0;
+  }
+
+  .background-confirmation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba($color: #000000, $alpha: .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+
+    .box-confirmation {
+      width: size(500);
+      height: size(250);
+      background: $color-seven;
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      padding: size(30);
+
+      &::before {
+        content: '';
+        background: $color-one;
+        width: size(50);
+        height: size(50);
+        border-radius: 6px;
+        position: absolute;
+        left: -25px;
+        top: 25px;
+      }
+
+      &::after {
+        content: '';
+        background: transparent;
+        border: 3px solid $color-three;
+        width: size(50);
+        height: size(50);
+        border-radius: 6px;
+        position: absolute;
+        left: -15px;
+        top: 35px;
+        box-sizing: border-box;
+      }
+
+      .box-text-01 {
+        font-size: size(26);
+        font-weight: 600;
+        font-family: $type-second;
+        color: $color-two;
+        margin-bottom: size(20);
+      }
+
+      .box-text-02 {
+        font-size: size(16);
+        margin-bottom: size(15);
+
+        span {
+          font-size: size(18);
+          font-weight: 600;
+        }
+      }
+
+      .box-text-03 {
+        font-size: size(14);
+
+        span {
+          font-weight: 600;
+        }
+      }
+
+      .button-default {
+        margin-bottom: 0;
+      }
+    }
   }
 }

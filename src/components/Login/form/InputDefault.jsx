@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { IconVisible } from './Icons'
+import MessageError from './MessageError'
+import { DataInput } from './DataInput'
 
 const InputDefault = ({ label, name, type, valueRef, error, autocomplete }) => {
   const [colorVisible, setColorVisible] = useState('#b1b1b1')
@@ -43,7 +45,7 @@ const InputDefault = ({ label, name, type, valueRef, error, autocomplete }) => {
         </button>
         : null}
 
-      {error && <p className='mensage-error'>{error}</p>}
+      <MessageError error={error} />
     </div>
   )
 }

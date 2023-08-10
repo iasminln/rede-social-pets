@@ -1,16 +1,19 @@
-import React, { useContext } from 'react'
+import React, { useState } from 'react'
 import InputDefault from './form/InputDefault';
 import ButtonDefault from './form/ButtonDefault';
-import { IconSpinner } from './form/Icons';
 import useForm from '../../hooks/useForm';
-import { UserContext } from '../../userContext';
 import { USER_POST } from '../../Api';
+import useFetch from '../../hooks/useFetch';
+import ModalConfirmation from './ModalConfirmation';
+import MessageError from './form/MessageError';
+
 
 const LoginCreate = () => {
-  const {  error, loading } = useContext(UserContext)
   const passwordElement = useForm()
   const usuarioElement = useForm()
   const emailElement = useForm('email')
+  const { loading, error, request } = useFetch()
+  const [visibleBox, setVisibleBox] = useState(false)
 
 
   const handleSubmit = async (e) => {
@@ -25,9 +28,10 @@ const LoginCreate = () => {
       password: passwordElement.valueRef?.current?.value
     })
 
-    const response = await fetch(url, options)
+    const { response } = await request(url, options)
 
-    console.log("ress", response)
+    if (response.ok) setVisibleBox(true)
+
   }
 
 
@@ -40,9 +44,17 @@ const LoginCreate = () => {
         <InputDefault type='email' label='E-mail' name='emailElement' autocomplete="email" {...emailElement} />
         <InputDefault type='password' label='Senha' name='passwordElement' autocomplete="new-password" {...passwordElement} />
 
-        {loading ? <ButtonDefault disabled><IconSpinner /></ButtonDefault> : <ButtonDefault>Criar conta</ButtonDefault>}
+        <ButtonDefault loading={loading}>Criar conta</ButtonDefault>
 
-        {error && <p className='mensage-error-login'>{error}</p>}
+        <MessageError error={error} />
+
+        {visibleBox ?
+          <ModalConfirmation
+            onClose={setVisibleBox}
+            username={usuarioElement?.valueRef?.current?.value}
+            password={passwordElement.valueRef?.current?.value}
+          />
+          : null}
 
       </form>
 

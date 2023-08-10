@@ -4,7 +4,7 @@ import InputDefault from './form/InputDefault';
 import ButtonDefault from './form/ButtonDefault';
 import useForm from '../../hooks/useForm';
 import { UserContext } from '../../userContext';
-import { IconSpinner } from './form/Icons';
+import MessageError from './form/MessageError';
 
 const LoginForm = () => {
   const passwordElement = useForm()
@@ -31,9 +31,9 @@ const LoginForm = () => {
           <InputDefault type='text' label='Usuário' name='usuarioElement' autocomplete="username" {...usuarioElement} />
           <InputDefault type='password' label='Senha' name='passwordElement' autocomplete="current-password" {...passwordElement} />
 
-          {loading ? <ButtonDefault disabled><IconSpinner /></ButtonDefault> : <ButtonDefault>Entrar</ButtonDefault>}
+          <ButtonDefault loading={loading}>Entrar</ButtonDefault>
 
-          {error && <p className='mensage-error-login'>{error}</p>}
+          <MessageError error={error} />
           <Link className='link-esqueci-senha' to='/login/recuperar'>Esqueci minha senha</Link>
         </form>
 

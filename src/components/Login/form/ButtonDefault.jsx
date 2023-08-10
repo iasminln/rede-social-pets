@@ -1,11 +1,16 @@
 import React from 'react'
+import { IconSpinner } from './Icons';
 
-const ButtonDefault = ({ children, ...props }) => {
+const ButtonDefault = ({ children, loading, ...props }) => {
 
 
   return (
     <>
-      <button {...props} className='button-default'>{children}</button>
+      {loading ?
+        <button {...props} disabled className='button-default'><IconSpinner /></button> :
+        <button {...props} className='button-default'>{children}</button>
+      }
+
     </>
   )
 }

@@ -17,7 +17,7 @@
 
   .mensage-error {
     font-size: size(12);
-    color: red;
+    color: $color-eight;
     margin-top: size(5);
   }
 
@@ -28,7 +28,7 @@
     position: absolute;
     right: 0;
     bottom: 0;
-    padding: 2px 10px;
+    padding: size(2) size(10);
     border-radius: 6px;
   }
 }

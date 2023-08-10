@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react'
+import { useRef, useState } from 'react'
 
 const types = {
   email: {
@@ -11,12 +11,12 @@ const useForm = (type) => {
   const valueRef = useRef()
   const [error, setError] = useState(null)
 
-  const validate = (valueRef) =>{
-    if(type === false) return true;
-    if (valueRef.length === 0){
+  const validate = (valueRef) => {
+    if (type === false) return true;
+    if (valueRef.length === 0) {
       setError('Preencha um valor')
       return false
-    } else if (types[type] && !types[type].regex.test(valueRef?.current?.value)){
+    } else if (types[type] && !types[type].regex.test(valueRef?.current?.value)) {
       setError(types[type].message)
       return false
     } else {
@@ -27,7 +27,7 @@ const useForm = (type) => {
 
   return {
     valueRef,
-    validate: ()=> validate(valueRef), 
+    validate: () => validate(valueRef),
     error
   }
 }
