@@ -13,7 +13,7 @@ const Conta = () => {
         <Route path='post' element={<UserPost />} />
         <Route path='/estatisticas' element={<Estatisticas />} />
       </Routes>
-      Conta
+      
     </div>
   )
 }
