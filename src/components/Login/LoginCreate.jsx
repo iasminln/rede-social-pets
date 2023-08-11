@@ -5,7 +5,8 @@ import useForm from '../../hooks/useForm';
 import { USER_POST } from '../../Api';
 import useFetch from '../../hooks/useFetch';
 import ModalConfirmation from './ModalConfirmation';
-import MessageError from './form/MessageError';
+import MessageError from '../Utils/MessageError';
+import Title from '../Utils/Title';
 
 
 const LoginCreate = () => {
@@ -37,7 +38,7 @@ const LoginCreate = () => {
 
   return (
     <section className='login'>
-      <h1 className='titulos'>Cadastro</h1>
+      <Title>Cadastro</Title>
 
       <form onSubmit={handleSubmit}>
         <InputDefault type='text' label='Usuário' name='usuarioElement' autocomplete="username" {...usuarioElement} />

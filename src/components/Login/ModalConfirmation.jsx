@@ -6,17 +6,11 @@ const ModalConfirmation = ({ onClose, username, password }) => {
   const { userLogin, login, loading } = useContext(UserContext)
   const [count, setCount] = useState(10)
 
-  const getBody = document.body
-  getBody.style.overflow = 'hidden'
-
   const handleClick = useCallback(() => {
     userLogin(username, password)
-    if (login) {
-      getBody.style.overflow = 'auto'
-      onClose(false)
-    }
+    if (login) onClose(false)
 
-  }, [getBody.style, login, onClose, password, userLogin, username])
+  }, [login, onClose, password, userLogin, username])
 
 
   useEffect(() => {

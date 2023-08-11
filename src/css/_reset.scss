@@ -10,7 +10,7 @@ body {
   color: $color-type;
   font-family: $type-first;
   position: relative;
-  top: size(64);
+  top: size(128);
 }
 
 h1,
@@ -18,10 +18,16 @@ h2,
 h3,
 h4 {
   margin: 0;
-} 
+}
 
 a {
   text-decoration: none;
+  color: $color-type;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 3px 1px $color-four;
+  }
 }
 
 ul,
@@ -43,9 +49,8 @@ input {
   font-family: $type-first;
   color: $color-type;
 
-  &:focus{
+  &:focus {
     outline: none;
     box-shadow: 0 0 3px 1px $color-four;
   }
 }
-

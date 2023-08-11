@@ -4,7 +4,8 @@ import InputDefault from './form/InputDefault';
 import ButtonDefault from './form/ButtonDefault';
 import useForm from '../../hooks/useForm';
 import { UserContext } from '../../userContext';
-import MessageError from './form/MessageError';
+import MessageError from '../Utils/MessageError';
+import Title from '../Utils/Title';
 
 const LoginForm = () => {
   const passwordElement = useForm()
@@ -26,7 +27,7 @@ const LoginForm = () => {
   return (
     <>
       <section className='login'>
-        <h1 className='titulos'>Login</h1>
+      <Title>Login</Title>
         <form onSubmit={handleSubmit}>
           <InputDefault type='text' label='Usuário' name='usuarioElement' autocomplete="username" {...usuarioElement} />
           <InputDefault type='password' label='Senha' name='passwordElement' autocomplete="current-password" {...passwordElement} />
@@ -39,7 +40,7 @@ const LoginForm = () => {
 
       </section>
       <section className='login'>
-        <h2 className='titulos'>Cadastro</h2>
+      <Title>Cadastro</Title>
         <p>Ainda não possui conta? Cadastre-se no site!</p>
         <Link to='/login/criar-conta' className='button-default'>Cadastre-se</Link>
       </section >

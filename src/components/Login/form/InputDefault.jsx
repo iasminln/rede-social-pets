@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { IconVisible } from './Icons'
-import MessageError from './MessageError'
+import MessageError from '../../Utils/MessageError'
 import { DataInput } from './DataInput'
 
 const InputDefault = ({ label, name, type, valueRef, error, autocomplete }) => {

@@ -1,9 +1,11 @@
 @import "mixins";
 @import "vars";
 @import "reset";
-@import "header";
+@import "../components/Utils/utils";
+@import "../components/header/header";
 @import "../components/Login/login";
 @import "home";
 @import "../components/footer/footer";
 @import "../components/Login/form/button";
-@import "../components/Login/form/input"
+@import "../components/Login/form/input";
+@import "../components/user/user";
