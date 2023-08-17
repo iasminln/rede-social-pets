@@ -1,6 +1,8 @@
 # Rede social de pets
 
-Em construção 😺
+Em construção 😺 A página pode ser acessada pelo link abaixo, mas ainda não está finalizada. Ou seja, ainda haverão bugs e páginas em branco. 😉
+
+> Acesso: https://iasminln.github.io/rede-social-pets/
 
 ## Prévia
 
