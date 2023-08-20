@@ -5,17 +5,17 @@ import MessageError from '../Utils/MessageError';
 import Loading from '../Utils/Loading'
 import FeedPhotoItem from './FeedPhotoItem';
 
-const FeedPhotos = ({ setModalPhoto }) => {
+const FeedPhotos = ({ setModalPhoto, user }) => {
   const { data, loading, error, request } = useFetch();
 
   useEffect(() => {
     const fetchPhotos = async () => {
-      const { url, options } = PHOTOS_GET({ page: 1, total: 6, user: 0 })
+      const { url, options } = PHOTOS_GET({ page: 1, total: 6, user })
       await request(url, options)
-      
+
     }
     fetchPhotos();
-  }, [request]);
+  }, [request, user]);
 
 
   if (error) return <MessageError>{error}</MessageError>

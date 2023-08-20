@@ -3,6 +3,10 @@
   grid-template-columns: 1fr 1fr 1fr;
   gap: size(20);
 
+  @include mq(760) {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .photo-item {
     display: grid;
     cursor: pointer;
@@ -17,6 +21,11 @@
     &:nth-child(2) {
       grid-column: 2/4;
       grid-row: span 2;
+
+      @include mq(760) {
+        grid-column: auto;
+        grid-row: auto;
+      }
     }
 
     .img {
@@ -71,7 +80,7 @@
       }
     }
 
-    @include mq(1000){
+    @include mq(1000) {
       grid-template-columns: 1fr;
       height: 85%;
       max-width: size(600);

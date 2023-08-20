@@ -14,7 +14,7 @@
 }
 
 @mixin container() {
-  max-width: size(1200);
+  max-width: size(1000);
   padding: 0 size(16);
   margin: 0 auto;
 }
