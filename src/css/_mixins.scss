@@ -2,6 +2,11 @@
   @return calc($size/ 16)+rem;
 }
 
+@mixin fontSize($fontSize, $lineSize: 10) {
+  font-size: size($fontSize);
+  line-height: size($fontSize + $lineSize);
+}
+
 @mixin mq($width, $type: max) {
   @media (#{$type}-width: ($width + px)) {
     @content;
@@ -12,4 +17,17 @@
   max-width: size(1200);
   padding: 0 size(16);
   margin: 0 auto;
+}
+
+@mixin display-flex($a: center, $j: center, $f: row) {
+  display: flex;
+  align-items: $a;
+  justify-content: $j;
+  flex-direction: $f;
+}
+
+@mixin dark() {
+  body.darkmode & {
+    @content
+  }
 }

@@ -1,3 +1,5 @@
 .home{
+  @include container();
   margin-top: size(100);
+  
 }
