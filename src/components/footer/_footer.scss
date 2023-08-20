@@ -1,15 +1,12 @@
 footer {
   height: size(160);
   background: $color-three;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  @include display-flex($f: column);
 
   .text01 {
     color: $color-five;
     font-family: $type-second;
-    font-size: size(20);
+    @include fontSize(20);
     font-weight: 600;
     margin-bottom: size(8);
     text-align: center;
@@ -17,7 +14,7 @@ footer {
 
   .text02 {
     color: $color-five;
-    font-size: size(14);
+    @include fontSize(14);
     margin-bottom: size(15);
     text-align: center;
 
@@ -38,9 +35,7 @@ footer {
   }
 
   .image-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include display-flex();
 
     a {
       padding: 0 size(10);
@@ -50,6 +45,5 @@ footer {
         transform: scale(1.2);
       }
     }
-
   }
 }

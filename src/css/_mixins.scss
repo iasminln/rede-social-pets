@@ -31,3 +31,19 @@
     @content
   }
 }
+
+@mixin scroll() {
+  &::-webkit-scrollbar {
+    width: 8px;
+
+    &-thumb {
+      background-color: rgba($color: $color-nine, $alpha: .6);
+      border-radius: 2px;
+    }
+
+    &-track {
+      background-color: $color-six;
+      border-radius: 2px;
+    }
+  }
+}

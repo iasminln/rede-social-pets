@@ -1,5 +1,6 @@
 import React from 'react'
 import IconEye from '../../assets/visualizacao.svg'
+import ImageSkeleton from '../Utils/ImageSkeleton'
 
 const FeedPhotoItem = ({ photo, setModalPhoto }) => {
 
@@ -9,7 +10,7 @@ const FeedPhotoItem = ({ photo, setModalPhoto }) => {
 
   return (
     <li className='photo-item' onClick={handleClick}>
-      <img src={photo.src} alt={photo.title} />
+      <ImageSkeleton src={photo.src} alt={photo.title} />
       <span className='visualizacao'><img src={IconEye} /> {photo.acessos}</span>
     </li>
   )

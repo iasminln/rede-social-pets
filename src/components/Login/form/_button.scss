@@ -7,13 +7,11 @@
   background: $color-three;
   font-weight: 500;
   color: $color-five;
-  font-size: size(17);
+  @include fontSize(17);
   letter-spacing: .5px;
   cursor: pointer;
   transition: 0.3s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include display-flex();
   width: fit-content;
   
   &:hover {

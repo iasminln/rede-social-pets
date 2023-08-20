@@ -43,7 +43,7 @@
   }
 
   .link-esqueci-senha {
-    font-size: size(14);
+    @include fontSize(14);
     position: relative;
     margin: size(20) 0;
     display: inline-block;
@@ -60,7 +60,7 @@
   }
 
   .mensage-error-login {
-    font-size: size(14);
+    @include fontSize(14);
     color: $color-eight;
     margin: size(6) 0;
   }

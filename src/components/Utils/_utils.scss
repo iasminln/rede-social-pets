@@ -1,7 +1,7 @@
 // ******* Mensagem de erro
 
 .mensage-error {
-  font-size: size(12);
+  @include fontSize(12);
   color: $color-eight;
   margin-top: size(5);
 }
@@ -9,7 +9,7 @@
 // ********* Titulo principal
 
 .title-text {
-  font-size: size(38);
+  @include fontSize(38);
   font-weight: 500;
   margin: 0 0 size(10) 0;
   font-family: $type-second;
@@ -41,9 +41,7 @@
   width: 100%;
   height: 100vh;
   background: rgba($color: #000000, $alpha: .5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include display-flex();
   z-index: 3;
 
   .box-confirmation {
@@ -51,14 +49,11 @@
     height: size(250);
     background: $color-seven;
     border-radius: 6px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    @include display-flex($j:space-between, $f: column);
     position: relative;
     padding: size(30);
 
-    @include mq(600){
+    @include mq(600) {
       width: 80%;
       height: 50%;
     }
@@ -88,7 +83,7 @@
     }
 
     .box-text-01 {
-      font-size: size(26);
+      @include fontSize(26);
       font-weight: 600;
       font-family: $type-second;
       color: $color-two;
@@ -97,18 +92,18 @@
     }
 
     .box-text-02 {
-      font-size: size(16);
+      @include fontSize(16);
       margin-bottom: size(15);
       text-align: center;
 
       span {
-        font-size: size(18);
+        @include fontSize(18);
         font-weight: 600;
       }
     }
 
     .box-text-03 {
-      font-size: size(14);
+      @include fontSize(14);
       text-align: center;
 
       span {
@@ -122,14 +117,52 @@
   }
 
   .modal-sair-btns {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    @include display-flex($j: space-evenly);
     width: 100%;
 
-    @include mq(600){
+    @include mq(600) {
       flex-direction: column;
 
+    }
+  }
+}
+
+
+// ******* Image skeleton
+
+.wrapper-skeleton {
+  position: relative;
+  height: 100%;
+
+  @include mq(1000){
+    height: auto;
+  }
+
+  img {
+    opacity: 0;
+    transition: .2s;
+    
+  }
+
+  .div-skeleton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(90deg, #eee 0px, #fff 50%, #eee 100%);
+    background-color: #eee;
+    background-size: 200%;
+    animation: skeleton 1s infinite linear;
+
+    @keyframes skeleton {
+      from {
+        background-position: 0px;
+      }
+
+      to {
+        background-position: -200%;
+      }
     }
   }
 }

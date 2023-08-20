@@ -41,7 +41,7 @@
         background: #fff;
         color: #000;
         border: 1px solid #000;
-        font-size: size(12);
+        @include fontSize(12);
       }
 
       img {
@@ -51,9 +51,6 @@
         height: 100%;
 
       }
-
     }
   }
-
-
 }

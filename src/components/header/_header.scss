@@ -9,29 +9,25 @@ header {
 
   .nav {
     @include container();
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include display-flex($j: space-between);
     height: size(64);
 
     .container-header-login {
-      display: flex;
-      align-items: center;
+      @include display-flex($j: flex-start);
     }
 
     .logo {
       font-family: $type-second;
-      font-size: size(24);
+      @include fontSize(24);
       font-weight: 700;
       letter-spacing: .1px;
       color: $color-type;
     }
 
     .login {
-      display: flex;
-      align-items: center;
+      @include display-flex($j: flex-start);
       color: $color-type;
-      line-height: 1;
+      @include fontSize(16);
 
       &::after {
         content: '';
@@ -44,8 +40,7 @@ header {
     }
 
     .title-header {
-      display: flex;
-      align-items: center;
+      @include display-flex($j: flex-start);
       position: relative;
 
       svg {
@@ -62,29 +57,24 @@ header {
   .nav-secundario {
     height: size(64);
     background: $color-three;
-    display: flex;
-    align-items: center;
+    @include display-flex($j: flex-start);
     box-shadow: 0 2px 4px rgba($color: #000000, $alpha: .1);
 
     .nav-logado {
       @include container();
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      @include display-flex($j: space-between);
       width: 100%;
       height: 100%;
 
 
       .menu-logado {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include display-flex();
         background: none;
         border: none;
         cursor: pointer;
         color: $color-five;
         letter-spacing: .5px;
-        font-size: size(17);
+        @include fontSize(17);
         opacity: 0.8;
         height: 100%;
         position: relative;

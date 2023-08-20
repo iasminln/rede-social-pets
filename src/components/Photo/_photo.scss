@@ -1,10 +1,19 @@
 .image-modal {
   height: size(600);
 
+  @include mq(1000){
+    height: auto;
+  }
+
   img {
     height: 100%;
     border-radius: 6px 0 0 6px;
     object-fit: cover;
+
+    @include mq(1000){
+      border-radius: 0;
+      height: auto;
+    }
   }
 }
 
@@ -38,7 +47,6 @@
   }
 
   .infos-itens {
-
     @include display-flex($j: flex-start);
     gap: size(20);
 
@@ -93,7 +101,7 @@
       fill: $color-four;
     }
 
-    &:hover{
+    &:hover {
       box-shadow: 0 0 3px 1px $color-four;
     }
   }
@@ -102,21 +110,7 @@
 .list-comments {
   overflow-y: auto;
   margin: size(30) 0;
-
-  &::-webkit-scrollbar {
-    width: 8px;
-
-    &-thumb {
-      background-color: rgba($color: $color-nine, $alpha: .6);
-      border-radius: 4px;
-
-    }
-
-    &-track {
-      background-color: $color-six;
-      border-radius: 4px;
-    }
-  }
+  @include scroll();
 
   li {
     @include fontSize(16);

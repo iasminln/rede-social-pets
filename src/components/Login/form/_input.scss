@@ -3,7 +3,7 @@
   position: relative;
 
   .form-label {
-    font-size: size(14);
+    @include fontSize(14);
     margin-bottom: size(6);
   }
 
