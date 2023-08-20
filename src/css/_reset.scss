@@ -42,9 +42,10 @@ img {
 }
 
 button,
-input {
+input,
+textarea {
   display: block;
-  font-size: size(16);
+  @include fontSize(16, 6);
   font-family: $type-first;
   color: $color-type;
 

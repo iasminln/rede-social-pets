@@ -32,11 +32,7 @@ const UserPost = () => {
 
     const token = window.localStorage.getItem('token')
     const { url, options } = PHOTO_POST(formData, token)
-    const { json } = await request(url, options)
-
-
-    console.log("olhando", json)
-
+    await request(url, options)
   }
 
   const handleImgChange = ({ target }) => {

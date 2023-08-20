@@ -10,7 +10,8 @@
 
 .infos-modal {
   padding: size(20);
-
+  display: grid;
+  grid-template-rows: auto 1fr auto;
   .infos-autor {
     @include display-flex($j: space-between);
     margin-bottom: size(20);
@@ -53,5 +54,41 @@
         margin-right: size(5);
       }
     }
+  }
+}
+
+.form-comentarios {
+  display: grid;
+  grid-template-columns: 1fr 50px;
+
+  .textarea-coment {
+    max-width: 300px;
+    max-height: 300px;
+    min-width: 100px;
+    min-height: 65px;
+    padding: size(8) size(10);
+    background: $color-seven;
+    border: 1px solid $color-six;
+    border-radius: 6px;
+    width: 100%;
+  }
+
+  .btn-comentar {
+    cursor: pointer;
+    background: none;
+    border: none;
+    transition: .3s;
+    margin-left: size(5);
+
+
+    svg {
+      transform: rotate(15deg);
+      transition: .3s;
+    }
+
+    &:hover svg {
+      fill: $color-four;
+    }
+
   }
 }

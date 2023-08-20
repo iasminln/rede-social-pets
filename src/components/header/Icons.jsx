@@ -6,7 +6,7 @@ export const IconPata = () => {
     </svg>
   );
 }
-
+  
 export const IconSair = () => {
 
   return (

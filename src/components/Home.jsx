@@ -3,7 +3,7 @@ import Feed from './Feed/Feed';
 
 const Home = () => {
   return (
-    <div className="home">
+    <div className="wrapper-user-pages">
       <Feed/>
     </div>
   )
