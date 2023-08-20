@@ -188,3 +188,11 @@
 
   }
 }
+
+// ********** Página 404
+
+.page-error {
+  @include container();
+  margin-top: size(150);
+  min-height: 80vh;
+}

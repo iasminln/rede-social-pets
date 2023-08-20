@@ -5,6 +5,7 @@ import UserPost from './UserPost';
 import Estatisticas from './Estatisticas';
 import Title from '../Utils/Title';
 import { UserContext } from '../../userContext';
+import NotFound from '../Utils/NotFound';
 
 
 const Conta = () => {
@@ -17,6 +18,7 @@ const Conta = () => {
         <Route path='/' element={<><Title>Minhas fotos</Title><Feed user={data.id} /></>} />
         <Route path='post' element={<UserPost />} />
         <Route path='/estatisticas' element={<Estatisticas />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
 
     </div>

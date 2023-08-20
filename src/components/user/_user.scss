@@ -11,7 +11,7 @@
       grid-template-columns: 1fr 1fr;
       margin-bottom: size(70);
 
-      @include mq(700){
+      @include mq(700) {
         grid-template-columns: 1fr;
       }
     }
@@ -26,14 +26,14 @@
       position: relative;
       margin-left: size(20);
 
-      @include mq(700){
+      @include mq(700) {
         justify-self: flex-start;
         margin: size(20) 0 size(50) 0;
         width: 80vw;
         height: 80vw;
       }
 
-      .text-preview{
+      .text-preview {
         position: absolute;
         top: 6px;
         left: 6px;
@@ -53,4 +53,10 @@
       }
     }
   }
+}
+
+.user-profile {
+  @include container();
+  margin-top: size(150);
+  min-height: 80vh;
 }

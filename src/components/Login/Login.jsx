@@ -6,6 +6,7 @@ import LoginRecuperarSenha from './LoginRecuperarSenha';
 import { Navigate } from 'react-router-dom';
 import { UserContext } from '../../userContext';
 import ImageLogin from './ImageMain/ImageLogin';
+import NotFound from '../Utils/NotFound';
 
 const Login = () => {
   const { login } = useContext(UserContext)
@@ -21,6 +22,7 @@ const Login = () => {
           <Route path="/" element={<LoginForm />} />
           <Route path="/criar-conta" element={<LoginCreate />} />
           <Route path="/recuperar" element={<LoginRecuperarSenha />} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
       </div>
     </div>
