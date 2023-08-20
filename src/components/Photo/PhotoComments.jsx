@@ -3,12 +3,15 @@ import { UserContext } from '../../userContext'
 import { IconPataComment } from './Icons'
 import useFetch from '../../hooks/useFetch'
 import { COMMENT_POST } from '../../Api'
+import { FunctionVerifyDate } from './functionVerifyDate'
+import { Link } from 'react-router-dom'
 
 const PhotoComments = (props) => {
   const { login } = useContext(UserContext)
-  const [listComments, setListComments] = useState(() => props.comments);
+  const [listComments, setListComments] = useState(() => props.comments.reverse());
   const [comment, setComment] = useState('');
   const { request, error } = useFetch();
+
 
   const handleClick = async (e) => {
     e.preventDefault();
@@ -17,21 +20,21 @@ const PhotoComments = (props) => {
     const { response, json } = await request(url, options)
     if (response.ok) {
       setComment('')
-      setListComments((listComments) => [...listComments, json])
+      setListComments((listComments) => [json, ...listComments])
     }
-
   }
-
 
   return (
     <>
-
-      <ul>
+      <ul className='list-comments'>
         {listComments.map((item) => {
           return (
             <li key={item.comment_ID}>
-              <b>{item.comment_author}:</b>
-              <span>{item.comment_content}</span>
+              <div className='title-time'>
+                <b><Link to={`/perfil/${item.comment_author}`}>@{item.comment_author}</Link></b>
+                <span>{FunctionVerifyDate(item)}</span>
+                </div>
+              <span className='comment'>{item.comment_content}</span>
             </li>
           )
         })}

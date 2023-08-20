@@ -1,6 +1,6 @@
 import React from 'react';
 import './css/style.scss'
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import Header from './components/header/Header';
 import Login from './components/Login/Login';
 import Home from './components/Home';
@@ -14,7 +14,7 @@ const App = () => {
 
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <UserStorage>
           <Header />
           <Routes>
@@ -24,7 +24,7 @@ const App = () => {
           </Routes>
           <Footer />
         </UserStorage>
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 };

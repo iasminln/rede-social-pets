@@ -9,9 +9,11 @@
 }
 
 .infos-modal {
+  height: size(600);
   padding: size(20);
   display: grid;
   grid-template-rows: auto 1fr auto;
+
   .infos-autor {
     @include display-flex($j: space-between);
     margin-bottom: size(20);
@@ -62,10 +64,7 @@
   grid-template-columns: 1fr 50px;
 
   .textarea-coment {
-    max-width: 300px;
-    max-height: 300px;
-    min-width: 100px;
-    min-height: 65px;
+    resize: none;
     padding: size(8) size(10);
     background: $color-seven;
     border: 1px solid $color-six;
@@ -86,9 +85,76 @@
       transition: .3s;
     }
 
-    &:hover svg {
+    &:hover svg,
+    &:focus svg {
       fill: $color-four;
+      
     }
 
+    &:focus{
+      box-shadow: none;
+    }
+  }
+}
+
+.list-comments {
+  overflow-y: auto;
+  margin: size(30) 0;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+
+    &-thumb {
+      background-color: rgba($color: $color-nine, $alpha: .6);
+      border-radius: 4px;
+
+    }
+
+    &-track {
+      background-color: $color-six;
+      border-radius: 4px;
+    }
+  }
+
+  li {
+    @include fontSize(16);
+    padding: size(15) 0;
+    border-bottom: 1px solid $color-six;
+
+    &:last-child {
+      border: none;
+    }
+
+    .title-time {
+      @include display-flex($j: flex-start);
+
+      b {
+        @include fontSize(16);
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      span {
+        @include display-flex();
+        @include fontSize(13);
+        color: $color-nine;
+
+        &::before {
+          content: '';
+          width: size(6);
+          height: size(6);
+          background: $color-nine;
+          display: inline-block;
+          margin: 0 size(10);
+          border-radius: 100%;
+        }
+      }
+    }
+
+    .comment {
+      @include fontSize(16);
+    }
   }
 }
