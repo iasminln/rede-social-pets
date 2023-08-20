@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import PhotoComments from './PhotoComments'
 import Title from '../Utils/Title'
 import IconEye from '../../assets/visualizacao-black.svg'
+import { UserContext } from '../../userContext'
+import PhotoDelete from './PhotoDelete'
 
 const Photo = ({ data }) => {
   const { photo, comments } = data
-
+  const user = useContext(UserContext)
 
 
   return (
@@ -14,26 +16,22 @@ const Photo = ({ data }) => {
       <div className='image-modal'> <img src={photo.src} alt={photo.title} /></div>
       <div className='infos-modal'>
         <div>
-          <p className='infos-autor'>
-            <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link>
+          <div className='infos-autor'>
+            {user.data && user.data.username === photo.author ? <PhotoDelete id={photo.id} /> : <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link>}
             <span className='visualizacao'><img src={IconEye} /> {photo.acessos}</span>
-          </p>
+          </div>
 
-          <Title> <Link to={`/foto/${photo.id}`}>{photo.title}</Link></Title>
-
+          <Title><Link to={`/foto/${photo.id}`}>{photo.title}</Link></Title>
 
           <ul className='infos-itens'>
             <li> {photo.peso} kg</li>
-            <li> {photo.idade}{photo.idade === 1 ? ' ano' : ' anos'} </li>
+            <li> {photo.idade}{photo.idade === '1' ? ' ano' : ' anos'} </li>
           </ul>
         </div>
-
 
         <PhotoComments id={photo.id} comments={comments} />
 
       </div>
-
-
     </>
   )
 }

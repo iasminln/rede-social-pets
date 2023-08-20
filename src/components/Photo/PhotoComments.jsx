@@ -33,7 +33,7 @@ const PhotoComments = (props) => {
               <div className='title-time'>
                 <b><Link to={`/perfil/${item.comment_author}`}>@{item.comment_author}</Link></b>
                 <span>{FunctionVerifyDate(item)}</span>
-                </div>
+              </div>
               <span className='comment'>{item.comment_content}</span>
             </li>
           )
@@ -45,6 +45,7 @@ const PhotoComments = (props) => {
         <div>
           <form className='form-comentarios'>
             <textarea
+              placeholder='Adicionar um comentário...'
               className='textarea-coment'
               name="comment"
               id="comment"

@@ -20,6 +20,7 @@ h4 {
 }
 
 a {
+  cursor: pointer;
   text-decoration: none;
   color: $color-type;
 
@@ -39,6 +40,10 @@ li {
 img {
   display: block;
   max-width: 100%;
+}
+
+button{
+  cursor: pointer;
 }
 
 button,

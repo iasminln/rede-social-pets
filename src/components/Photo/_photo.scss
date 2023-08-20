@@ -61,7 +61,7 @@
 
 .form-comentarios {
   display: grid;
-  grid-template-columns: 1fr 50px;
+  grid-template-columns: 1fr 70px;
 
   .textarea-coment {
     resize: none;
@@ -78,6 +78,9 @@
     border: none;
     transition: .3s;
     margin-left: size(5);
+    border: 1px solid $color-six;
+    border-radius: 6px;
+    @include display-flex();
 
 
     svg {
@@ -88,11 +91,10 @@
     &:hover svg,
     &:focus svg {
       fill: $color-four;
-      
     }
 
-    &:focus{
-      box-shadow: none;
+    &:hover{
+      box-shadow: 0 0 3px 1px $color-four;
     }
   }
 }
@@ -156,5 +158,20 @@
     .comment {
       @include fontSize(16);
     }
+  }
+}
+
+.btn-deletar {
+  padding: size(2) size(8);
+  background: transparent;
+  border: 1px solid rgba($color: $color-nine, $alpha: .4);
+  color: $color-nine;
+  border-radius: 6px;
+  @include display-flex();
+  @include fontSize(13);
+  transition: .3s;
+
+  &:hover {
+    background: $color-six;
   }
 }
