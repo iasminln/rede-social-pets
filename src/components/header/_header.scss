@@ -22,6 +22,7 @@ header {
       font-weight: 700;
       letter-spacing: .1px;
       color: $color-type;
+      padding: size(10) size(15) size(10) 0;
     }
 
     .login {
@@ -46,8 +47,8 @@ header {
       svg {
         transform: rotate(15deg);
         position: absolute;
-        right: -15px;
-        bottom: 0;
+        right: -11px;
+        bottom: 3px;
         z-index: -1;
       }
     }

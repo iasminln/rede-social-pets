@@ -1,6 +1,6 @@
 .wrapper-user-pages {
   @include container();
-  margin-top: size(150);
+  margin: size(150) auto size(50) auto;
   min-height: 80vh;
 
   .container-post {
