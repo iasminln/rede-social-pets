@@ -10,8 +10,9 @@ import Title from '../Utils/Title';
 const LoginForm = () => {
   const passwordElement = useForm()
   const usuarioElement = useForm()
-  const { userLogin, error, loading } = useContext(UserContext)
+  
 
+  const { userLogin, error, loading } = useContext(UserContext)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -35,7 +36,7 @@ const LoginForm = () => {
           <ButtonDefault loading={loading}>Entrar</ButtonDefault>
 
           <MessageError error={error} />
-          <Link className='link-esqueci-senha' to='/login/recuperar'>Esqueci minha senha</Link>
+          <Link className='link-esqueci-senha' to='/login/perdeu'>Esqueci minha senha</Link>
         </form>
 
       </section>

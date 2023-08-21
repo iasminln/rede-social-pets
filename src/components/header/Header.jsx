@@ -7,12 +7,13 @@ import { IconEstatisticas } from './Icons';
 import { IconAdicionarFoto } from './Icons';
 import { IconFeed } from './Icons';
 import ModalSair from './ModalSair';
+import useMedia from '../../hooks/useMedia';
 
 const Header = () => {
   const { login, data } = useContext(UserContext)
   const [visibleBox, setVisibleBox] = useState(false)
+  const isMobile = useMedia('(max-width: 600px)')
 
-  const isMobile = window.innerWidth < 600 ? true : false
 
   return (
     <header>

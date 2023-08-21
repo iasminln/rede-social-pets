@@ -7,6 +7,7 @@ import { Navigate } from 'react-router-dom';
 import { UserContext } from '../../userContext';
 import ImageLogin from './ImageMain/ImageLogin';
 import NotFound from '../Utils/NotFound';
+import LoginPerdeuSenha from './LoginPerdeuSenha';
 
 const Login = () => {
   const { login } = useContext(UserContext)
@@ -21,6 +22,7 @@ const Login = () => {
         <Routes>
           <Route path="/" element={<LoginForm />} />
           <Route path="/criar-conta" element={<LoginCreate />} />
+          <Route path="/perdeu" element={<LoginPerdeuSenha />} />
           <Route path="/recuperar" element={<LoginRecuperarSenha />} />
           <Route path='*' element={<NotFound />} />
         </Routes>

@@ -2,7 +2,7 @@ export const API_URL = 'https://dogsapi.origamid.dev/json';
 
 export const TOKEN_POST = (body) => {
   return {
-    url: API_URL + '/jwt-auth/v1/token',
+    url: `${API_URL}/jwt-auth/v1/token`,
     options: {
       method: 'POST',
       headers: {
@@ -15,7 +15,7 @@ export const TOKEN_POST = (body) => {
 
 export const TOKEN_VALIDATE_POST = (token) => {
   return {
-    url: API_URL + '/jwt-auth/v1/token/validate',
+    url: `${API_URL}/jwt-auth/v1/token/validate`,
     options: {
       method: 'POST',
       headers: {
@@ -27,7 +27,7 @@ export const TOKEN_VALIDATE_POST = (token) => {
 
 export const USER_GET = (token) => {
   return {
-    url: API_URL + '/api/user',
+    url: `${API_URL}/api/user`,
     options: {
       method: 'GET',
       headers: {
@@ -39,7 +39,7 @@ export const USER_GET = (token) => {
 
 export const USER_POST = (body) => {
   return {
-    url: API_URL + '/api/user',
+    url: `${API_URL}/api/user`,
     options: {
       method: 'POST',
       headers: {
@@ -52,7 +52,7 @@ export const USER_POST = (body) => {
 
 export const PHOTO_POST = (formData, token) => {
   return {
-    url: API_URL + '/api/photo',
+    url: `${API_URL}/api/photo`,
     options: {
       method: 'POST',
       headers: {
@@ -106,6 +106,19 @@ export const PHOTO_DELETE = (id, token) => {
       headers: {
         Authorization: 'Bearer ' + token
       },
+    }
+  }
+}
+
+export const PASSWORD_LOST = (body) => {
+  return {
+    url: `${API_URL}/api/password/lost`,
+    options: {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body)
     }
   }
 }
