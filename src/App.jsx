@@ -17,7 +17,7 @@ const App = () => {
 
   return (
     <div className='app'>
-      <BrowserRouter>
+      <HashRouter>
         <UserStorage>
           <Header />
           <main>
@@ -32,7 +32,7 @@ const App = () => {
           </main>
           <Footer />
         </UserStorage>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 };
