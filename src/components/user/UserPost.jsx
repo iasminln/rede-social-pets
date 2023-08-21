@@ -7,6 +7,7 @@ import MessageError from '../Utils/MessageError'
 import useFetch from '../../hooks/useFetch'
 import { PHOTO_POST } from '../../Api';
 import { useNavigate } from 'react-router-dom';
+import Head from '../Utils/Head';
 
 
 const UserPost = () => {
@@ -45,6 +46,7 @@ const UserPost = () => {
 
   return (
     <div className="container-post">
+      <Head title='Postar' />
       <Title>Postar foto</Title>
       <div className='conteudo'>
 

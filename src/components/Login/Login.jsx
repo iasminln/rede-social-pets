@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { Route, Routes } from 'react-router-dom';
 import LoginForm from './LoginForm';
 import LoginCreate from './LoginCreate';
-import LoginRecuperarSenha from './LoginRecuperarSenha';
+import LoginResetarSenha from './LoginResetarSenha';
 import { Navigate } from 'react-router-dom';
 import { UserContext } from '../../userContext';
 import ImageLogin from './ImageMain/ImageLogin';
@@ -23,7 +23,7 @@ const Login = () => {
           <Route path="/" element={<LoginForm />} />
           <Route path="/criar-conta" element={<LoginCreate />} />
           <Route path="/perdeu" element={<LoginPerdeuSenha />} />
-          <Route path="/recuperar" element={<LoginRecuperarSenha />} />
+          <Route path="/resetar" element={<LoginResetarSenha />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </div>

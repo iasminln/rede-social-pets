@@ -7,6 +7,7 @@ import useFetch from '../../hooks/useFetch';
 import ModalConfirmation from './ModalConfirmation';
 import MessageError from '../Utils/MessageError';
 import Title from '../Utils/Title';
+import Head from '../Utils/Head';
 
 
 const LoginCreate = () => {
@@ -38,6 +39,7 @@ const LoginCreate = () => {
 
   return (
     <section className='login'>
+      <Head title='Cadastro'/>
       <Title>Cadastro</Title>
 
       <form onSubmit={handleSubmit}>

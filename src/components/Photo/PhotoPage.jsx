@@ -6,7 +6,8 @@ import MessageError from '../Utils/MessageError';
 import Loading from '../Utils/Loading';
 import Photo from './Photo';
 import Feed from '../Feed/Feed';
-import FeedPhotos from '../Feed/FeedPhotos';
+import Head from '../Utils/Head';
+import { Link } from 'react-router-dom';
 
 const PhotoPage = () => {
   const { id } = useParams();
@@ -26,11 +27,12 @@ const PhotoPage = () => {
   if (data)
     return (
       <section className='wrapper-photo-page'>
+        <Head title={data.photo.title} />
         <div className='infos-photo'>
           <Photo data={data} />
         </div>
         <div className='infos-author'>
-          <p className='text-infos-author'>Veja mais publicações de {data.photo.author}:</p>
+          <p className='text-infos-author'>Veja mais publicações de <Link to={`/perfil/${data.photo.author}`}>@{data.photo.author}</Link></p>
           <Feed user={data.photo.author} total={3} preview={true} />
         </div>
 

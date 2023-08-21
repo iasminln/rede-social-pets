@@ -6,6 +6,11 @@
 
   @include mq(760) {
     grid-template-columns: 1fr 1fr;
+    gap: size(16);
+  }
+
+  @include mq(540){
+    grid-template-columns: 1fr;
   }
 
   &.feed-preview .photo-item:nth-child(2) {

@@ -6,6 +6,7 @@ import Estatisticas from './Estatisticas';
 import Title from '../Utils/Title';
 import { UserContext } from '../../userContext';
 import NotFound from '../Utils/NotFound';
+import Head from '../Utils/Head';
 
 
 const Conta = () => {
@@ -15,7 +16,13 @@ const Conta = () => {
   return (
     <div className="wrapper-user-pages">
       <Routes>
-        <Route path='/' element={<><Title>Minhas fotos</Title><Feed user={data.id} /></>} />
+        <Route path='/' element={
+          <>
+            <Head title='Minhas fotos' />
+            <Title>Minhas fotos</Title>
+            <Feed user={data.id} />
+          </>
+        } />
         <Route path='post' element={<UserPost />} />
         <Route path='/estatisticas' element={<Estatisticas />} />
         <Route path='*' element={<NotFound />} />

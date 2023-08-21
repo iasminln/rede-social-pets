@@ -5,6 +5,7 @@ import ButtonDefault from '../Login/form/ButtonDefault'
 import useForm from '../../hooks/useForm'
 import useFetch from '../../hooks/useFetch'
 import MessageError from '../Utils/MessageError'
+import Head from '../Utils/Head'
 import { PASSWORD_LOST } from '../../Api'
 
 const LoginPerdeuSenha = () => {
@@ -16,8 +17,8 @@ const LoginPerdeuSenha = () => {
     e.preventDefault();
     if (usuarioElement.validate()) {
       const { url, options } = PASSWORD_LOST({ login: usuarioElement?.valueRef?.current?.value, url: window.location.href.replace('perdeu', 'resetar') })
-     const {json, response} = await request(url, options)
-     console.log("olhar json", json, response, usuarioElement?.valueRef?.current?.value)
+      const { json, response } = await request(url, options)
+      console.log("olhar json", json, response, usuarioElement?.valueRef?.current?.value)
     }
 
   }
@@ -25,17 +26,16 @@ const LoginPerdeuSenha = () => {
 
   return (
     <section>
+      <Head title='Perdeu a senha?'/>
       <Title>Perdeu a senha?</Title>
 
-      {data ? <>E-mail enviado</> :
+      {data ? <p>E-mail enviado</p> :
         <form onSubmit={handleClick}>
           <InputDefault type='text' label='Digite o seu e-mail' name='email' {...usuarioElement} />
           <ButtonDefault loading={loading}>Enviar</ButtonDefault>
           <MessageError error={error} />
         </form>
       }
-
-
 
     </section>
   )

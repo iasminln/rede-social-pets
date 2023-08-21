@@ -180,6 +180,19 @@
     grid-template-columns: 3fr 2fr;
     margin-bottom: size(100);
 
+    @include mq(1000){
+      grid-template-columns: 2fr 2fr;
+    }
+
+    @include mq(850){
+      grid-template-columns: 1fr;
+    }
+
+  }
+
+  .infos-modal{
+    height: auto;
+    max-height: size(700);
   }
 
   .infos-author {

@@ -1,11 +1,13 @@
 import React from 'react'
 import Title from '../Utils/Title';
+import Head from '../Utils/Head';
 
 
 const Estatisticas = () => {
   return (
     <div className="Estatisticas">
-        <Title>Estatísticas</Title>
+      <Head title='Estatísticas' />
+      <Title>Estatísticas</Title>
     </div>
   )
 }

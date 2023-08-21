@@ -6,6 +6,7 @@ import useForm from '../../hooks/useForm';
 import { UserContext } from '../../userContext';
 import MessageError from '../Utils/MessageError';
 import Title from '../Utils/Title';
+import Head from '../Utils/Head';
 
 const LoginForm = () => {
   const passwordElement = useForm()
@@ -28,6 +29,7 @@ const LoginForm = () => {
   return (
     <>
       <section className='login'>
+      <Head title='Login'/>
       <Title>Login</Title>
         <form onSubmit={handleSubmit}>
           <InputDefault type='text' label='Usuário' name='usuarioElement' autocomplete="username" {...usuarioElement} />

@@ -44,8 +44,8 @@ const Feed = ({ user, total, preview }) => {
       {modalPhoto && <FeedModal photo={modalPhoto} setModalPhoto={setModalPhoto} />}
 
       {pages.map((page) =>
-        <ul className={`feed ${preview ? 'feed-preview' : ''}`}>
-          <FeedPhotos user={user} total={total} key={page} page={page} setModalPhoto={setModalPhoto} setInfinite={setInfinite} />
+        <ul key={page} className={`feed ${preview ? 'feed-preview' : ''}`}>
+          <FeedPhotos user={user} total={total}  page={page} setModalPhoto={setModalPhoto} setInfinite={setInfinite} />
         </ul>
       )}
 

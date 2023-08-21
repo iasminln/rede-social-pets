@@ -79,9 +79,10 @@ header {
         opacity: 0.8;
         height: 100%;
         position: relative;
+        
 
         @include mq(600) {
-          padding-right: 0;
+          padding: 0 size(10);
         }
 
         &::after {

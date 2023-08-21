@@ -10,6 +10,7 @@ body {
   color: $color-type;
   font-family: $type-first;
   position: relative;
+  @include fontSize(16);
 }
 
 h1,
