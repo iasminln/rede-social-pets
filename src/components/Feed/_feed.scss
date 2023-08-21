@@ -8,6 +8,12 @@
     grid-template-columns: 1fr 1fr;
   }
 
+  &.feed-preview .photo-item:nth-child(2) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+
   .photo-item {
     display: grid;
     cursor: pointer;
@@ -27,13 +33,14 @@
         grid-column: auto;
         grid-row: auto;
       }
+
     }
 
     .img {
       grid-area: 1/1;
     }
 
-    img{
+    img {
       border-radius: 6px;
     }
 

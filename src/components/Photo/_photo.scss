@@ -1,7 +1,7 @@
 .image-modal {
   height: size(600);
 
-  @include mq(1000){
+  @include mq(1000) {
     height: auto;
   }
 
@@ -10,7 +10,7 @@
     border-radius: 6px 0 0 6px;
     object-fit: cover;
 
-    @include mq(1000){
+    @include mq(1000) {
       border-radius: 0;
       height: auto;
     }
@@ -167,5 +167,25 @@
 
   &:hover {
     background: $color-six;
+  }
+}
+
+.wrapper-photo-page {
+  @include container();
+  margin: size(150) auto;
+  min-height: 80vh;
+
+  .infos-photo {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    margin-bottom: size(100);
+
+  }
+
+  .infos-author {
+    .text-infos-author {
+      @include fontSize(22);
+      margin: size(20) 0;
+    }
   }
 }
