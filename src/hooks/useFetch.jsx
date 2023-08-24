@@ -11,7 +11,7 @@ const useFetch = () => {
     let json
 
     try {
-      setError(null)
+      setError(null) 
       setLoading(true)
       response = await fetch(url, options)
       json = await response.json()

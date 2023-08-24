@@ -20,7 +20,7 @@ const FeedPhotos = ({ setModalPhoto, user, page, setInfinite, total }) => {
   }, [page, request, user, setInfinite, total]);
 
 
-  if (error) return <MessageError>{error}</MessageError>
+  if (error) return <MessageError error={error} />
   if (loading) return <Loading />
 
   if (data)
