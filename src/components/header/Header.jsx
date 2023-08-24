@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import { useContext, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom';
 import { UserContext } from '../../userContext';
 import { IconPata } from './Icons';

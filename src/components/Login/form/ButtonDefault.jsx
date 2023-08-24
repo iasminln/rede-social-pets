@@ -1,4 +1,3 @@
-import React from 'react'
 import { IconSpinner } from './Icons';
 
 const ButtonDefault = ({ children, loading, ...props }) => {

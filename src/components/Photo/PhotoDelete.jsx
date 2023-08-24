@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import useFetch from '../../hooks/useFetch'
 import { PHOTO_DELETE } from '../../Api';
 import ModalDefault from '../Utils/ModalDefault'

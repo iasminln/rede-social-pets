@@ -1,4 +1,3 @@
-import React from 'react'
 import IconEye from '../../assets/visualizacao.svg'
 import ImageSkeleton from '../Utils/ImageSkeleton'
 

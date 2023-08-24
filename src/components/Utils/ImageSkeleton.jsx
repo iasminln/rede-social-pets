@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 const ImageSkeleton = ({ src, alt, ...props }) => {
   const [skeleton, setSkeleton] = useState(true);

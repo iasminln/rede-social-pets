@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { IconVisible } from './Icons'
 import MessageError from '../../Utils/MessageError'
-import { DataInput } from './DataInput'
+
 
 const InputDefault = ({ label, name, type, valueRef, error, autocomplete }) => {
   const [colorVisible, setColorVisible] = useState('#b1b1b1')

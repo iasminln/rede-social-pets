@@ -1,4 +1,3 @@
-import React from 'react'
 import Title from '../Utils/Title';
 import Head from '../Utils/Head';
 

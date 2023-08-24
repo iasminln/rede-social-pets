@@ -1,4 +1,3 @@
-import React from 'react'
 import Title from '../Utils/Title'
 import InputDefault from '../Login/form/InputDefault'
 import ButtonDefault from '../Login/form/ButtonDefault'

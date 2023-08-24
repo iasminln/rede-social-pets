@@ -1,4 +1,3 @@
-import React from 'react'
 import { listImages } from './ListImages'
 
 const ImageLogincopy = () => {

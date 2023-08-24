@@ -1,10 +1,11 @@
-import React, { useContext, useState } from 'react'
+import { useContext, useState } from 'react'
 import { UserContext } from '../../userContext'
 import { IconPataComment } from './Icons'
 import useFetch from '../../hooks/useFetch'
 import { COMMENT_POST } from '../../Api'
 import { FunctionVerifyDate } from './functionVerifyDate'
 import { Link } from 'react-router-dom'
+import MessageError from '../Utils/MessageError'
 
 const PhotoComments = (props) => {
   const { login } = useContext(UserContext)
@@ -40,6 +41,7 @@ const PhotoComments = (props) => {
         })}
       </ul>
 
+      <MessageError error={error} />
 
       {login &&
         <div>

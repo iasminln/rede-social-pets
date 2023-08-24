@@ -1,4 +1,7 @@
-export const API_URL = 'https://dogsapi.origamid.dev/json';
+// export const API_URL = 'https://dogsapi.origamid.dev/json';
+// export const API_URL = 'https://apipet.iasminln.cloud/wp-json';
+export const API_URL = 'http://petbook.local/wp-json';
+
 
 export const TOKEN_POST = (body) => {
   return {
@@ -27,7 +30,7 @@ export const TOKEN_VALIDATE_POST = (token) => {
 
 export const USER_GET = (token) => {
   return {
-    url: `${API_URL}/api/user`,
+    url: `${API_URL}/v1/user`,
     options: {
       method: 'GET',
       headers: {
@@ -39,7 +42,7 @@ export const USER_GET = (token) => {
 
 export const USER_POST = (body) => {
   return {
-    url: `${API_URL}/api/user`,
+    url: `${API_URL}/v1/user`,
     options: {
       method: 'POST',
       headers: {
@@ -52,7 +55,7 @@ export const USER_POST = (body) => {
 
 export const PHOTO_POST = (formData, token) => {
   return {
-    url: `${API_URL}/api/photo`,
+    url: `${API_URL}/v1/photo`,
     options: {
       method: 'POST',
       headers: {
@@ -65,7 +68,7 @@ export const PHOTO_POST = (formData, token) => {
 
 export const PHOTOS_GET = ({ page, total, user }) => {
   return {
-    url: `${API_URL}/api/photo/?_page=${page}&_total=${total}&_user=${user}`,
+    url: `${API_URL}/v1/photo/?_page=${page}&_total=${total}&_user=${user}`,
     options: {
       method: 'GET',
       cache: 'no-store'
@@ -75,7 +78,7 @@ export const PHOTOS_GET = ({ page, total, user }) => {
 
 export const PHOTO_GET = (id) => {
   return {
-    url: `${API_URL}/api/photo/${id}`,
+    url: `${API_URL}/v1/photo/${id}`,
     options: {
       method: 'GET',
       cache: 'no-store'
@@ -85,7 +88,7 @@ export const PHOTO_GET = (id) => {
 
 export const COMMENT_POST = (id, body, token) => {
   return {
-    url: `${API_URL}/api/comment/${id}`,
+    url: `${API_URL}/v1/comment/${id}`,
     options: {
       method: 'POST',
       headers: {
@@ -100,7 +103,7 @@ export const COMMENT_POST = (id, body, token) => {
 
 export const PHOTO_DELETE = (id, token) => {
   return {
-    url: `${API_URL}/api/photo/${id}`,
+    url: `${API_URL}/v1/photo/${id}`,
     options: {
       method: 'DELETE',
       headers: {
@@ -112,7 +115,7 @@ export const PHOTO_DELETE = (id, token) => {
 
 export const PASSWORD_LOST = (body) => {
   return {
-    url: `${API_URL}/api/password/lost`,
+    url: `${API_URL}/v1/password/lost`,
     options: {
       method: 'POST',
       headers: {
@@ -125,7 +128,7 @@ export const PASSWORD_LOST = (body) => {
 
 export const PASSWORD_RESET = (body) => {
   return {
-    url: `${API_URL}/api/password/reset`,
+    url: `${API_URL}/v1/password/reset`,
     options: {
       method: 'POST',
       headers: {
