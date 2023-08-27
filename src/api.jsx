@@ -1,6 +1,6 @@
 // export const API_URL = 'https://dogsapi.origamid.dev/json';
 // export const API_URL = 'https://apipet.iasminln.cloud/wp-json';
-export const API_URL = 'http://petbook.local/wp-json';
+export const API_URL = 'http://petapi.local/wp-json';
 
 
 export const TOKEN_POST = (body) => {
@@ -71,17 +71,24 @@ export const PHOTOS_GET = ({ page, total, user }) => {
     url: `${API_URL}/v1/photo/?_page=${page}&_total=${total}&_user=${user}`,
     options: {
       method: 'GET',
-      cache: 'no-store'
+      cache: 'no-store',
+      headers: {
+        Accept: "application/json, text/plain, */*"
+      },
     }
   }
 }
+
 
 export const PHOTO_GET = (id) => {
   return {
     url: `${API_URL}/v1/photo/${id}`,
     options: {
       method: 'GET',
-      cache: 'no-store'
+      cache: 'no-store',
+      headers: {
+        Accept: "application/json, text/plain, */*"
+      },
     }
   }
 }

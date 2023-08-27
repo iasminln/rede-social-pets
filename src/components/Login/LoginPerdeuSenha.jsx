@@ -16,10 +16,8 @@ const LoginPerdeuSenha = () => {
     e.preventDefault();
     if (usuarioElement.validate()) {
       const { url, options } = PASSWORD_LOST({ login: usuarioElement?.valueRef?.current?.value, url: window.location.href.replace('perdeu', 'resetar') })
-      const { json, response } = await request(url, options)
-      console.log("olhar json", json, response, usuarioElement?.valueRef?.current?.value)
+      await request(url, options)
     }
-
   }
 
 

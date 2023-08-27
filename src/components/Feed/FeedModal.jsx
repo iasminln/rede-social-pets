@@ -13,17 +13,9 @@ const FeedModal = ({ photo, setModalPhoto }) => {
     const { url, options } = PHOTO_GET(photo.id)
     request(url, options)
 
-    fetch(url, options)
-    .then(res=>{
-      return res.text()
-    }).then(text=>{
-      return console.log("texto", text)
-    })
-
-
   }, [photo, request]);
 
-  console.log("o que tem aqui", data)
+
   return (
     <>
       <MessageError error={error} />

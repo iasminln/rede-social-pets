@@ -38,7 +38,6 @@ const Feed = ({ user, total, preview }) => {
     }
   }, [infinite, preview]);
 
-  console.log("modal", modalPhoto)
 
   return (
     <div className="Feed">
