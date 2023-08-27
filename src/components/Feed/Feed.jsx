@@ -1,12 +1,10 @@
 import { useState, useEffect } from 'react'
-import FeedModal from './FeedModal';
 import FeedPhotos from './FeedPhotos';
 
 const Feed = ({ user, total, preview }) => {
-  const [modalPhoto, setModalPhoto] = useState(null)
   const [pages, setPages] = useState([1])
   const [infinite, setInfinite] = useState(true)
- 
+
 
   useEffect(() => {
     let wait = false
@@ -41,11 +39,9 @@ const Feed = ({ user, total, preview }) => {
 
   return (
     <div className="Feed">
-      {modalPhoto && <FeedModal photo={modalPhoto} setModalPhoto={setModalPhoto} />}
-
       {pages.map((page) =>
         <ul key={page} className={`feed ${preview ? 'feed-preview' : ''}`}>
-          <FeedPhotos user={user} total={total}  page={page} setModalPhoto={setModalPhoto} setInfinite={setInfinite} />
+          <FeedPhotos user={user} total={total} page={page} setInfinite={setInfinite} />
         </ul>
       )}
 

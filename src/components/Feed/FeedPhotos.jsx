@@ -5,7 +5,7 @@ import MessageError from '../Utils/MessageError';
 import Loading from '../Utils/Loading'
 import FeedPhotoItem from './FeedPhotoItem';
 
-const FeedPhotos = ({ setModalPhoto, user, page, setInfinite, total }) => {
+const FeedPhotos = ({ user, page, setInfinite, total }) => {
   const { data, loading, error, request } = useFetch();
 
   useEffect(() => {
@@ -26,7 +26,7 @@ const FeedPhotos = ({ setModalPhoto, user, page, setInfinite, total }) => {
   if (data)
     return (
       <>
-        {data.map(photo => <FeedPhotoItem key={photo.id} photo={photo} setModalPhoto={setModalPhoto} />)}
+        {data.map(photo => <FeedPhotoItem key={photo.id} photo={photo} />)}
       </>
     );
   else return null

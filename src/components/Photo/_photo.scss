@@ -1,19 +1,11 @@
 .image-modal {
-  height: size(600);
-
   @include mq(1000) {
     height: auto;
   }
 
   img {
     height: 100%;
-    border-radius: 6px 0 0 6px;
-    object-fit: cover;
-
-    @include mq(1000) {
-      border-radius: 0;
-      height: auto;
-    }
+    border-radius: 10px;
   }
 }
 
@@ -177,17 +169,14 @@
 
   .infos-photo {
     display: grid;
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: 1fr size(400);
     margin-bottom: size(100);
 
     @include mq(1000){
-      grid-template-columns: 2fr 2fr;
-    }
-
-    @include mq(850){
       grid-template-columns: 1fr;
+      max-width: size(700);
+      margin: 0 auto;
     }
-
   }
 
   .infos-modal{
