@@ -26,6 +26,7 @@ export const UserStorage = ({ children }) => {
       setLoading(true)
       const { url, options } = TOKEN_POST({ username, password })
       const response = await fetch(url, options)
+      console.log("res", response)
       if (!response.ok) throw new Error('Usuário ou senha incorretos')
       const { token } = await response.json()
       window.localStorage.setItem('token', token)

@@ -13,7 +13,8 @@ import Head from '../Utils/Head';
 const UserPost = () => {
   const petAge = useForm()
   const petName = useForm()
-  const petWeight = useForm()
+  const petSpecies = useForm()
+  const petDescription = useForm()
   const [img, setImg] = useState()
   const { request, loading, error, data } = useFetch()
   const navigate = useNavigate()
@@ -28,8 +29,9 @@ const UserPost = () => {
     const formData = new FormData()
     formData.append('img', img.raw)
     formData.append('nome', petName?.valueRef?.current?.value)
-    formData.append('peso', petWeight?.valueRef?.current?.value)
+    formData.append('especie', petSpecies?.valueRef?.current?.value)
     formData.append('idade', petAge?.valueRef?.current?.value)
+    formData.append('descricao', petDescription?.valueRef?.current?.value)
 
     const token = window.localStorage.getItem('token')
     const { url, options } = PHOTO_POST(formData, token)
@@ -53,7 +55,8 @@ const UserPost = () => {
         <form onSubmit={handleClick}>
           <InputDefault type='text' label='Nome' name='petName' {...petName} />
           <InputDefault type='number' label='Idade' name='petAge' {...petAge} />
-          <InputDefault type='number' label='Peso' name='petWeight' {...petWeight} />
+          <InputDefault type='text' label='Espécie' name='petSpecies' {...petSpecies} />
+          <InputDefault type='text' label='Descrição' name='petDescription' {...petDescription} />
           <input type="file" name='img' id='img' onChange={handleImgChange} />
 
           <ButtonDefault loading={loading}>Enviar</ButtonDefault>

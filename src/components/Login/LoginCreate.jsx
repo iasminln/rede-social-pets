@@ -31,6 +31,7 @@ const LoginCreate = () => {
     })
 
     const { response } = await request(url, options)
+    console.log("res", response)
 
     if (response.ok) setVisibleBox(true)
 

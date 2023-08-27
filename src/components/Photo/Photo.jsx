@@ -11,6 +11,8 @@ const Photo = ({ data }) => {
   const { photo, comments } = data
   const user = useContext(UserContext)
 
+  console.log("photo", photo)
+
 
   return (
     <>
@@ -22,12 +24,14 @@ const Photo = ({ data }) => {
             <span className='visualizacao'><img src={IconEye} /> {photo.acessos}</span>
           </div>
 
-          <Title><Link to={`/foto/${photo.id}`}>{photo.title}</Link></Title> 
+          <Title><Link to={`/foto/${photo.id}`}>{photo.title}</Link></Title>
 
           <ul className='infos-itens'>
-            <li> {photo.peso} kg</li>
-            <li> {photo.idade}{photo.idade === '1' ? ' ano' : ' anos'} </li>
+            {photo.especie && <li>{photo.especie}</li>}
+            {photo.idade ? <li>{photo.idade} {photo.idade === '1' ? ' ano' : ' anos'}</li> : ''}
           </ul>
+
+          <div>{photo.content}</div>
         </div>
 
         <PhotoComments id={photo.id} comments={comments} />

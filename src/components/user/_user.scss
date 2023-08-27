@@ -8,7 +8,7 @@
 
     .conteudo {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: size(480) 1fr;
       margin-bottom: size(70);
 
       @include mq(700) {
