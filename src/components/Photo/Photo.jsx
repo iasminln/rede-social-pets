@@ -22,7 +22,7 @@ const Photo = ({ data }) => {
             <span className='visualizacao'><img src={IconEye} /> {photo.acessos}</span>
           </div>
 
-          <Title><Link to={`/foto/${photo.id}`}>{photo.title}</Link></Title>
+          <Title><Link to={`/foto/${photo.id}`}>{photo.title}</Link></Title> 
 
           <ul className='infos-itens'>
             <li> {photo.peso} kg</li>

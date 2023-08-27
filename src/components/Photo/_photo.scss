@@ -10,10 +10,35 @@
 }
 
 .infos-modal {
-  height: size(600);
   padding: size(20);
   display: grid;
   grid-template-rows: auto 1fr auto;
+  max-height: size(750);
+
+  .div-text-login {
+    @include display-flex($a: flex-end, $j: flex-start);
+
+    span {
+      @include fontSize(18, 20);
+      @include display-flex();
+
+      svg{
+        transform: rotate(15deg);
+        margin-left: size(5);
+        margin-bottom: size(5);
+      }
+
+      a{
+        color: $color-two;
+        font-weight: 600;
+        margin-right: size(6);
+
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+  }
 
   .infos-autor {
     @include display-flex($j: space-between);
@@ -172,17 +197,13 @@
     grid-template-columns: 1fr size(400);
     margin-bottom: size(100);
 
-    @include mq(1000){
+    @include mq(1000) {
       grid-template-columns: 1fr;
       max-width: size(700);
       margin: 0 auto;
     }
   }
 
-  .infos-modal{
-    height: auto;
-    max-height: size(700);
-  }
 
   .infos-author {
     .text-infos-author {

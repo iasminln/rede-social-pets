@@ -6,6 +6,7 @@ import { COMMENT_POST } from '../../Api'
 import { FunctionVerifyDate } from './functionVerifyDate'
 import { Link } from 'react-router-dom'
 import MessageError from '../Utils/MessageError'
+import { IconPata } from '../Header/Icons'
 
 const PhotoComments = (props) => {
   const { login } = useContext(UserContext)
@@ -43,7 +44,7 @@ const PhotoComments = (props) => {
 
       <MessageError error={error} />
 
-      {login &&
+      {login ?
         <div>
           <form className='form-comentarios'>
             <textarea
@@ -65,6 +66,9 @@ const PhotoComments = (props) => {
             </button>
 
           </form>
+        </div> :
+        <div className='div-text-login'>
+          <span><Link to='/login'>Faça login</Link> para poder comentar! <IconPata width="25px" height="25px" /></span>
         </div>
       }
     </>

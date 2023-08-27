@@ -18,7 +18,7 @@ const Header = () => {
   return (
     <header>
       <nav className='nav'>
-        <Link className='logo' to="/"><p className='title-header'>PetBook<IconPata /></p></Link>
+        <Link className='logo' to="/"><p className='title-header'>PetBook<IconPata width="35px" height="35px" /></p></Link>
         {login === true ?
           <div className='container-header-login'>
             <Link className='login' to="/login">Olá, {data.nome}</Link>

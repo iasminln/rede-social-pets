@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: size(30);
+  min-height: 85vh;
 
   @include mq(800) {
     grid-template-columns: 1fr;
@@ -21,6 +22,12 @@
 
   .login-image {
     position: relative;
+
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
     &::after {
       @include mq(800) {

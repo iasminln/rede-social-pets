@@ -8,7 +8,22 @@ const FeedPhotoItem = ({ photo }) => {
     <li className='photo-item'>
       <Link to={`/foto/${photo.id}`}>
         <ImageSkeleton src={photo.src} alt={photo.title} />
-        <span className='visualizacao'><img src={IconEye} /> {photo.acessos}</span>
+        <div className='visualizacao'>
+
+          <span className='view01'>
+            {photo.title}
+          </span>
+
+          <span className='view02'>
+            <img src={IconEye} />
+            {photo.acessos}
+          </span>
+
+          <span className='view03'>
+            @{photo.author}
+          </span>
+
+        </div>
       </Link>
     </li>
   )
