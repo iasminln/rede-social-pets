@@ -1,6 +1,6 @@
 // export const API_URL = 'https://dogsapi.origamid.dev/json';
-// export const API_URL = 'https://apipet.iasminln.cloud/wp-json';
-export const API_URL = 'http://petapi.local/wp-json';
+export const API_URL = 'https://apipet.iasminln.cloud/wp-json';
+
 
 
 export const TOKEN_POST = (body) => {
