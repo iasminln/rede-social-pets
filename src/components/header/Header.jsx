@@ -16,13 +16,17 @@ const Header = () => {
 
 
   return (
+    <>
     <header>
       <nav className='nav'>
         <Link className='logo' to="/"><p className='title-header'>PetBook<IconPata width="35px" height="35px" /></p></Link>
+        <span style={{color:"#e4191f"}}>Ops! Estamos em manutenção de API. Fiquem com essa API provisória!</span>
         {login === true ?
           <div className='container-header-login'>
             <Link className='login' to="/login">Olá, <span className='login-username'> {data.nome}!</span></Link>
+            
           </div>
+          
           : <Link className='login' to="/login">Login / Cadastro</Link>
         }
 
@@ -42,6 +46,7 @@ const Header = () => {
       {visibleBox ? <ModalSair onClose={setVisibleBox} /> : null}
 
     </header>
+    </>
   )
 }
 
