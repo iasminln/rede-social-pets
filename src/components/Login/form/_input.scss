@@ -1,5 +1,8 @@
 .wrapper-input {
-  margin: size(12) 0;
+  &:not(.is-textarea){
+    margin: size(12) 0;
+  }
+ 
   position: relative;
 
   .form-label {
@@ -24,5 +27,10 @@
     bottom: 0;
     padding: size(2) size(10);
     border-radius: 6px;
+  }
+
+  textarea{
+    resize: none;
+    max-height: 100px;
   }
 }

@@ -39,12 +39,11 @@ const Feed = ({ user, total, preview }) => {
 
   return (
     <div className="Feed">
-      {pages.map((page) =>
-        <ul key={page} className={`feed ${preview ? 'feed-preview' : ''}`}>
-          <FeedPhotos user={user} total={total} page={page} setInfinite={setInfinite} />
-        </ul>
-      )}
-
+      <ul className={`feed ${preview ? 'feed-preview' : ''}`}>
+        {pages.map((page) =>
+          <FeedPhotos key={page} user={user} total={total} page={page} setInfinite={setInfinite} />
+        )}
+      </ul>
     </div>
   )
 }

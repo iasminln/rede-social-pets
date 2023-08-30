@@ -10,7 +10,7 @@ const FeedPhotos = ({ user, page, setInfinite, total }) => {
 
   useEffect(() => {
     const fetchPhotos = async () => {
-      const valorTotal = total ? total : 6
+      const valorTotal = total ? total : 8
       const { url, options } = PHOTOS_GET({ page, total: valorTotal, user })
       const { response, json } = await request(url, options)
       if (response && response.ok && json.length < valorTotal) setInfinite(false)

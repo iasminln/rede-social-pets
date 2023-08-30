@@ -20,7 +20,7 @@ const UserPost = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    if (data) navigate('/conta')
+    if (data) navigate('/conta/fotos')
   }, [data, navigate])
 
   const handleClick = async (e) => {
@@ -56,7 +56,7 @@ const UserPost = () => {
           <InputDefault type='text' label='Nome' name='petName' {...petName} />
           <InputDefault type='number' label='Idade' name='petAge' {...petAge} />
           <InputDefault type='text' label='Espécie' name='petSpecies' {...petSpecies} />
-          <InputDefault type='text' label='Descrição' name='petDescription' {...petDescription} />
+          <InputDefault isTextarea={true} type='text' label='Descrição' name='petDescription' {...petDescription} />
           <input type="file" name='img' id='img' onChange={handleImgChange} />
 
           <ButtonDefault loading={loading}>Enviar</ButtonDefault>

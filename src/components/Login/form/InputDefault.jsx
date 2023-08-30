@@ -3,7 +3,7 @@ import { IconVisible } from '../../Utils/Icons/IconVisible'
 import MessageError from '../../Utils/MessageError'
 
 
-const InputDefault = ({ label, name, type, valueRef, error,isTextarea,  ...props }) => {
+const InputDefault = ({ label, name, type, valueRef, error, isTextarea, ...props }) => {
   const [colorVisible, setColorVisible] = useState('#b1b1b1')
 
   const showPassword = (e) => {
@@ -24,7 +24,7 @@ const InputDefault = ({ label, name, type, valueRef, error,isTextarea,  ...props
 
 
   return (
-    <div className='wrapper-input'>
+    <div className={`wrapper-input ${isTextarea && 'is-textarea'}`}>
       <label className='form-label' htmlFor={name}>{label}</label>
 
       {isTextarea ?
@@ -46,7 +46,7 @@ const InputDefault = ({ label, name, type, valueRef, error,isTextarea,  ...props
           ref={valueRef}
           {...props}
         />
-}
+      }
 
       {name === 'passwordElement' ?
         <button
