@@ -26,17 +26,16 @@ header {
     }
 
     .login {
-      @include display-flex($j: flex-start);
       color: $color-type;
       @include fontSize(16);
 
-      &::after {
-        content: '';
-        background: url('../assets/usuario.svg') no-repeat;
-        width: 14px;
-        height: 17px;
-        display: inline-block;
-        margin-left: 8px;
+      &:hover {
+        text-decoration: underline;
+      }
+
+      .login-username{
+        color: $color-two;
+        font-weight: 600;
       }
     }
 
@@ -79,7 +78,7 @@ header {
         opacity: 0.8;
         height: 100%;
         position: relative;
-        
+
 
         @include mq(600) {
           padding: 0 size(10);

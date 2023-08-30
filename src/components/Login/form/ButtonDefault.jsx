@@ -1,4 +1,4 @@
-import { IconSpinner } from './Icons';
+import { IconSpinner } from '../../Utils/Icons/IconSpinner'
 
 const ButtonDefault = ({ children, loading, ...props }) => {
 

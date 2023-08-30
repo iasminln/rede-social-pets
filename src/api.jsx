@@ -1,11 +1,11 @@
 // export const API_URL = 'https://dogsapi.origamid.dev/json/api';
 // export const API_URL_JWT = 'https://dogsapi.origamid.dev/json';
 
-// export const API_URL = 'https://apipet.iasminln.cloud/wp-json/v1';
-// export const API_URL_JWT = 'https://apipet.iasminln.cloud/wp-json';
+export const API_URL = 'https://apipet.iasminln.cloud/wp-json/v1';
+export const API_URL_JWT = 'https://apipet.iasminln.cloud/wp-json';
 
-export const API_URL = 'https://petapi.local/wp-json/v1';
-export const API_URL_JWT = 'https://petapi.local/wp-json';
+// export const API_URL = 'https://petapi.local/wp-json/v1';
+// export const API_URL_JWT = 'https://petapi.local/wp-json';
 
 
 
@@ -110,6 +110,18 @@ export const COMMENT_POST = (id, body, token) => {
       },
       body: JSON.stringify(body)
 
+    }
+  }
+}
+
+export const COMMENT_DELETE = (id, token) => {
+  return {
+    url: `${API_URL}/comment/${id}`,
+    options: {
+      method: 'DELETE',
+      headers: {
+        Authorization: 'Bearer ' + token
+      },
     }
   }
 }

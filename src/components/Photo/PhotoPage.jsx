@@ -13,8 +13,6 @@ const PhotoPage = () => {
   const { id } = useParams();
   const { data, loading, error, request } = useFetch()
 
-
-
   useEffect(() => {
     const { url, options } = PHOTO_GET(id)
     request(url, options)

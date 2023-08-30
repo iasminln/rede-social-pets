@@ -44,9 +44,9 @@ const LoginCreate = () => {
       <Title>Cadastro</Title>
 
       <form onSubmit={handleSubmit}>
-        <InputDefault type='text' label='Usuário' name='usuarioElement' autocomplete="username" {...usuarioElement} />
-        <InputDefault type='email' label='E-mail' name='emailElement' autocomplete="email" {...emailElement} />
-        <InputDefault type='password' label='Senha' name='passwordElement' autocomplete="new-password" {...passwordElement} />
+        <InputDefault type='text' label='Usuário' name='usuarioElement' autoComplete="username" {...usuarioElement} />
+        <InputDefault type='email' label='E-mail' name='emailElement' autoComplete="email" {...emailElement} />
+        <InputDefault type='password' label='Senha' name='passwordElement' autoComplete="new-password" {...passwordElement} />
 
         <ButtonDefault loading={loading}>Criar conta</ButtonDefault>
 

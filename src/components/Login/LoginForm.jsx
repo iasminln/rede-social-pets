@@ -32,8 +32,8 @@ const LoginForm = () => {
       <Head title='Login'/>
       <Title>Login</Title>
         <form onSubmit={handleSubmit}>
-          <InputDefault type='text' label='Usuário' name='usuarioElement' autocomplete="username" {...usuarioElement} />
-          <InputDefault type='password' label='Senha' name='passwordElement' autocomplete="current-password" {...passwordElement} />
+          <InputDefault type='text' label='Usuário' name='usuarioElement' autoComplete="username" {...usuarioElement} />
+          <InputDefault type='password' label='Senha' name='passwordElement' autoComplete="current-password" {...passwordElement} />
 
           <ButtonDefault loading={loading}>Entrar</ButtonDefault>
 

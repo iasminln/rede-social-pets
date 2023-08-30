@@ -54,9 +54,47 @@
       }
     }
   }
+
+  .dados-pessoais{
+    margin: size(20) 0 size(30) 0;
+
+    .btn-resetar{
+      border: none;
+      background: none;
+      display: inline-block;
+      color: $color-two;
+      font-weight: 600;
+
+      &:hover{
+        text-decoration: underline;
+      }
+
+      
+    }
+
+    .text-resetar{
+
+      &::before{
+        content: '';
+        width: size(6);
+        height: size(6);
+        background: $color-nine;
+        display: inline-block;
+        margin: 0 size(10);
+        border-radius: 100%;
+        vertical-align: middle;
+
+      }
+    }
+  }
 }
 
 .user-profile {
+  margin-top: size(150);
+  min-height: 80vh;
+}
+
+.user-page{
   @include container();
   margin-top: size(150);
   min-height: 80vh;

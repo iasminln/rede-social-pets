@@ -7,7 +7,7 @@ const UserProfile = () => {
   const { user } = useParams();
 
   return (
-    <section className='user-profile'>
+    <section className='user-page'>
       <Head title={user}/>
       <Title>{user}</Title>
       <Feed user={user}  />

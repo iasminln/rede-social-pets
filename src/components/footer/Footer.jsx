@@ -1,4 +1,6 @@
-import { IconEmail, IconGithub, IconLinkedin } from './Icons';
+import { IconGithub } from '../Utils/Icons/IconGithub';
+import { IconLinkedin } from '../Utils/Icons/IconLinkedin';
+import { IconEmail } from '../Utils/Icons/IconEmail';
 
 const Footer = () => {
   return (

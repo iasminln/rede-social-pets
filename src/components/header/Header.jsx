@@ -3,9 +3,9 @@ import { Link, NavLink } from 'react-router-dom';
 import { UserContext } from '../../userContext';
 import { IconPata } from './Icons';
 import { IconSair } from './Icons';
-import { IconEstatisticas } from './Icons';
+import { IconMinhasFotos } from './Icons';
 import { IconAdicionarFoto } from './Icons';
-import { IconFeed } from './Icons';
+import { IconMinhaConta } from './Icons';
 import ModalSair from './ModalSair';
 import useMedia from '../../hooks/useMedia';
 
@@ -21,7 +21,7 @@ const Header = () => {
         <Link className='logo' to="/"><p className='title-header'>PetBook<IconPata width="35px" height="35px" /></p></Link>
         {login === true ?
           <div className='container-header-login'>
-            <Link className='login' to="/login">Olá, {data.nome}</Link>
+            <Link className='login' to="/login">Olá, <span className='login-username'> {data.nome}!</span></Link>
           </div>
           : <Link className='login' to="/login">Login / Cadastro</Link>
         }
@@ -31,8 +31,8 @@ const Header = () => {
       {login === true ?
         <div className='nav-secundario'>
           <nav className='nav-logado'>
-            <NavLink className='menu-logado' to="/conta/" ><IconFeed />{!isMobile && 'Minha Conta'} </NavLink>
-            <NavLink className='menu-logado' to="/conta/estatisticas" ><IconEstatisticas />{!isMobile && 'Estatísticas'}</NavLink>
+            <NavLink className='menu-logado' to="/conta/" ><IconMinhaConta />{!isMobile && 'Minha Conta'} </NavLink>
+            <NavLink className='menu-logado' to="/conta/fotos" ><IconMinhasFotos />{!isMobile && 'Minhas Fotos'}</NavLink>
             <NavLink className='menu-logado' to="/conta/post" ><IconAdicionarFoto />{!isMobile && 'Postar'}</NavLink>
             <button className='menu-logado' onClick={() => { setVisibleBox(true) }}><IconSair />{!isMobile && 'Sair'}</button>
           </nav>

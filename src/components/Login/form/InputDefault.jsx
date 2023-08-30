@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import { IconVisible } from './Icons'
+import { IconVisible } from '../../Utils/Icons/IconVisible'
 import MessageError from '../../Utils/MessageError'
 
 
-const InputDefault = ({ label, name, type, valueRef, error, autocomplete }) => {
+const InputDefault = ({ label, name, type, valueRef, error,isTextarea,  ...props }) => {
   const [colorVisible, setColorVisible] = useState('#b1b1b1')
 
   const showPassword = (e) => {
@@ -26,14 +26,27 @@ const InputDefault = ({ label, name, type, valueRef, error, autocomplete }) => {
   return (
     <div className='wrapper-input'>
       <label className='form-label' htmlFor={name}>{label}</label>
-      <input
-        className='form-input'
-        type={type}
-        id={name}
-        name={name}
-        ref={valueRef}
-        autoComplete={autocomplete}
-      />
+
+      {isTextarea ?
+        <textarea
+          className='form-input'
+          type={type}
+          id={name}
+          name={name}
+          ref={valueRef}
+          {...props}
+        />
+        :
+
+        <input
+          className='form-input'
+          type={type}
+          id={name}
+          name={name}
+          ref={valueRef}
+          {...props}
+        />
+}
 
       {name === 'passwordElement' ?
         <button

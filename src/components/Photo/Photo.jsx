@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import PhotoComments from './PhotoComments'
+import PhotoListComments from './PhotoListComments'
 import Title from '../Utils/Title'
 import IconEye from '../../assets/visualizacao-black.svg'
 import { UserContext } from '../../userContext'
@@ -10,9 +10,6 @@ import ImageSkeleton from '../Utils/ImageSkeleton'
 const Photo = ({ data }) => {
   const { photo, comments } = data
   const user = useContext(UserContext)
-
-  console.log("photo", photo)
-
 
   return (
     <>
@@ -34,7 +31,7 @@ const Photo = ({ data }) => {
           <div>{photo.content}</div>
         </div>
 
-        <PhotoComments id={photo.id} comments={comments} />
+        <PhotoListComments id={photo.id} comments={comments} />
 
       </div>
     </>

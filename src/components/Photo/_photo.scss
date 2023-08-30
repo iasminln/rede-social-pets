@@ -1,6 +1,5 @@
 .image-modal {
   img {
-    height: 100%;
     width: 100%;
     border-radius: 10px;
   }
@@ -10,11 +9,22 @@
   padding-left: size(20);
   display: grid;
   grid-template-rows: auto 1fr auto;
-  max-height: size(750);
 
-  @include mq(1000){
+  @include mq(1000) {
     padding: size(20) 0;
   }
+
+  .comment-area{
+    margin-top: size(30);
+
+    .title-comments{
+      font-family: $type-second;
+      font-weight: 600;
+      @include fontSize(20);
+    }
+
+  }
+
 
   .div-text-login {
     @include display-flex($a: flex-end, $j: flex-start);
@@ -23,18 +33,18 @@
       @include fontSize(18, 20);
       @include display-flex();
 
-      svg{
+      svg {
         transform: rotate(15deg);
         margin-left: size(5);
         margin-bottom: size(5);
       }
 
-      a{
+      a {
         color: $color-two;
         font-weight: 600;
         margin-right: size(6);
 
-        &:hover{
+        &:hover {
           text-decoration: underline;
         }
       }
@@ -67,6 +77,7 @@
   .infos-itens {
     @include display-flex($j: flex-start);
     gap: size(20);
+    margin-bottom: size(16);
 
     li {
       @include fontSize(18);
@@ -127,8 +138,10 @@
 
 .list-comments {
   overflow-y: auto;
-  margin: size(30) 0;
+  margin: 0 0 size(30) 0;
+  max-height: size(500);
   @include scroll();
+
 
   li {
     @include fontSize(16);
@@ -139,8 +152,25 @@
       border: none;
     }
 
-    .title-time {
-      @include display-flex($j: flex-start);
+    .btn-deletar {
+      border: none;
+      background: none;
+      padding: size(10);
+      border-radius: 100%;
+      margin: 0 size(5);
+
+      &:hover{
+        background: $color-six;
+      }
+    }
+
+
+    .title-btn {
+      @include display-flex($j: space-between);
+
+      .title{
+        @include display-flex($j: flex-start);
+      }
 
       b {
         @include fontSize(16);
