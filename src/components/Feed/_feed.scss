@@ -49,11 +49,12 @@
         margin-right: size(10);
       }
 
-      .view02{
+      .view02 {
         @include display-flex();
+        gap: size(5);
       }
 
-      .view03{
+      .view03 {
         align-self: flex-end;
       }
     }

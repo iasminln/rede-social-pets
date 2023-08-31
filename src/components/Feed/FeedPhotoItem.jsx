@@ -1,4 +1,4 @@
-import IconEye from '../../assets/visualizacao.svg'
+import { IconEye } from '../Utils/Icons/IconEye'
 import ImageSkeleton from '../Utils/ImageSkeleton'
 import { Link } from 'react-router-dom'
 
@@ -15,7 +15,7 @@ const FeedPhotoItem = ({ photo }) => {
           </span>
 
           <span className='view02'>
-            <img src={IconEye} />
+            <IconEye color='#fff' />
             {photo.acessos}
           </span>
 

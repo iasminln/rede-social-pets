@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import PhotoListComments from './PhotoListComments'
 import Title from '../Utils/Title'
-import IconEye from '../../assets/visualizacao-black.svg'
+import { IconEye } from '../Utils/Icons/IconEye'
 import { UserContext } from '../../userContext'
 import PhotoDelete from './PhotoDelete'
 import ImageSkeleton from '../Utils/ImageSkeleton'
@@ -18,7 +18,7 @@ const Photo = ({ data }) => {
         <div>
           <div className='infos-autor'>
             {user.data && user.data.username === photo.author ? <PhotoDelete id={photo.id} /> : <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link>}
-            <span className='visualizacao'><img src={IconEye} /> {photo.acessos}</span>
+            <span className='visualizacao'><IconEye color='#333' /> {photo.acessos}</span>
           </div>
 
           <Title><Link to={`/foto/${photo.id}`}>{photo.title}</Link></Title>

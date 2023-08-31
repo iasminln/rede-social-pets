@@ -67,6 +67,7 @@
 
     span {
       @include display-flex;
+      gap: size(5);
 
       img {
         margin-right: size(10);
